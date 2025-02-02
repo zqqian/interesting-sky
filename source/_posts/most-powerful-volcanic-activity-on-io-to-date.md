@@ -9,7 +9,7 @@ author: 杨旸
 
 &emsp;&emsp;NASA的朱诺号（Juno）探测器近期在木星的卫星木卫一（Io，亦译为埃欧或伊奥）南半球发现了一个巨大的火山热点。该热点的面积超过地球上最大的淡水湖，其喷发的能量更是全球所有发电厂总和的六倍。这一重要发现来自朱诺号上的红外线探测器，该仪器由意大利太空总署提供。这是迄今为止在这颗太阳系内最活跃的火山天体上记录到的最强烈火山活动。  
 
-<p><a href="/images/cbeb2ab7-224f-4e8c-8664-2367270e.webp" title="NASA朱诺号探测器于2024年12月27日飞掠木卫一时，拍摄到其南极右侧一处巨大的热点，面积超过地球上最大的淡水湖。Credit: NASA/JPL-Caltech/SwRI/ASI/INAF/JIRAM"><img src="/images/cbeb2ab7-224f-4e8c-8664-2367270e.webp" alt="NASA朱诺号探测器于2024年12月27日飞掠木卫一时，拍摄到其南极右侧一处巨大的热点，面积超过地球上最大的淡水湖。Credit: NASA/JPL-Caltech/SwRI/ASI/INAF/JIRAM"></a><br/>图说：NASA朱诺号探测器于2024年12月27日飞掠木卫一时，拍摄到其南极右侧一处巨大的热点，面积超过地球上最大的淡水湖。Credit: NASA/JPL-Caltech/SwRI/ASI/INAF/JIRAM</p>
+<p><a href="/images/cbeb2ab7-224f-4e8c-8664-2367270e.webp" target="_blank" title="NASA朱诺号探测器于2024年12月27日飞掠木卫一时，拍摄到其南极右侧一处巨大的热点，面积超过地球上最大的淡水湖。Credit: NASA/JPL-Caltech/SwRI/ASI/INAF/JIRAM"><img src="/images/cbeb2ab7-224f-4e8c-8664-2367270e.webp" alt="NASA朱诺号探测器于2024年12月27日飞掠木卫一时，拍摄到其南极右侧一处巨大的热点，面积超过地球上最大的淡水湖。Credit: NASA/JPL-Caltech/SwRI/ASI/INAF/JIRAM"></a><br/>图说：NASA朱诺号探测器于2024年12月27日飞掠木卫一时，拍摄到其南极右侧一处巨大的热点，面积超过地球上最大的淡水湖。Credit: NASA/JPL-Caltech/SwRI/ASI/INAF/JIRAM</p>
 
 &emsp;&emsp;木卫一的剧烈火山活动主要源自木星强大的引力变化，即潮汐力。木卫一的大小与地球的月球相当，但距离木星极近，并以椭圆轨道绕行，每42.5小时完成一周。由于距离的变化，木星对木卫一的引力拉扯也随之改变，使其不断受到挤压与拉伸。这种变形产生的摩擦热量导致木卫一内部部分熔化，从而驱动其表面约400座活跃火山的喷发，使其成为太阳系内火山活动最剧烈的天体。  
 
@@ -19,6 +19,6 @@ author: 杨旸
 
 &emsp;&emsp;除了红外探测数据，朱诺号的可见光相机亦拍摄了该区域的影像。科学团队将这些过去及现在影像进行比对，发现木卫一表面发生了显著变化，进一步证实了这次强烈的火山活动。这一发现不仅深化了我们对木卫一火山活动的理解，也为探索地球以外天体的地质活动提供了关键科学数据。朱诺号的后续观测将持续揭示这颗充满动态变化的卫星更多未解之谜。（编译/台北天文馆段皓元）
 
-<p><a href="/images/e_-_PIA26526_-_Io_Eruption_JunoC.webp" title="NASA朱诺号探测器于2024年拍摄的木卫一影像显示，其南极附近的表面发生了显著且可见的变化（由箭头标示）。影像由清晰至模煳的变化，则是由于朱诺号与木卫一的距离不同所致。Credit: NASA/JPL-Caltech/SwRI/MSSS Image processing by Jason Perry"><img src="/images/e_-_PIA26526_-_Io_Eruption_JunoC.webp" alt="NASA朱诺号探测器于2024年拍摄的木卫一影像显示，其南极附近的表面发生了显著且可见的变化（由箭头标示）。影像由清晰至模煳的变化，则是由于朱诺号与木卫一的距离不同所致。Credit: NASA/JPL-Caltech/SwRI/MSSS Image processing by Jason Perry"></a><br/>图说：NASA朱诺号探测器于2024年拍摄的木卫一影像显示，其南极附近的表面发生了显著且可见的变化（由箭头标示）。影像由清晰至模煳的变化，则是由于朱诺号与木卫一的距离不同所致。Credit: NASA/JPL-Caltech/SwRI/MSSS Image processing by Jason Perry</p>
+<p><a href="/images/e_-_PIA26526_-_Io_Eruption_JunoC.webp" target="_blank" title="NASA朱诺号探测器于2024年拍摄的木卫一影像显示，其南极附近的表面发生了显著且可见的变化（由箭头标示）。影像由清晰至模煳的变化，则是由于朱诺号与木卫一的距离不同所致。Credit: NASA/JPL-Caltech/SwRI/MSSS Image processing by Jason Perry"><img src="/images/e_-_PIA26526_-_Io_Eruption_JunoC.webp" alt="NASA朱诺号探测器于2024年拍摄的木卫一影像显示，其南极附近的表面发生了显著且可见的变化（由箭头标示）。影像由清晰至模煳的变化，则是由于朱诺号与木卫一的距离不同所致。Credit: NASA/JPL-Caltech/SwRI/MSSS Image processing by Jason Perry"></a><br/>图说：NASA朱诺号探测器于2024年拍摄的木卫一影像显示，其南极附近的表面发生了显著且可见的变化（由箭头标示）。影像由清晰至模煳的变化，则是由于朱诺号与木卫一的距离不同所致。Credit: NASA/JPL-Caltech/SwRI/MSSS Image processing by Jason Perry</p>
 
 资料来源：[NASA/JPL](https://www.jpl.nasa.gov/news/nasa-juno-mission-spots-most-powerful-volcanic-activity-on-io-to-date/ "开新视窗-NASA/JPL")
