@@ -45,6 +45,8 @@
   </div>
 {%- endif %}
 
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "368cdeb09135424fb91231a72c53e685"}'></script><!-- End Cloudflare Web Analytics -->
+
 {{- next_inject('footer') }}
 
 {%- if theme.footer.beian.enable %}
