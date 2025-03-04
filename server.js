@@ -653,7 +653,7 @@ function findChangedFiles(beforeFiles, afterFiles) {
 
 // API: 获取最新的ZIP文件
 app.get("/latest-articles-zip", (req, res) => {
-    const zipDir = path.join(__dirname, "public/downloads");
+    const zipDir = path.join(__dirname, "admin/downloads");
     
     // 如果目录不存在，返回错误
     if (!fs.existsSync(zipDir)) {
