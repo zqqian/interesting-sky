@@ -100,7 +100,7 @@ app.post('/admin/login', (req, res) => {
     const { password } = req.body;
     
     // 这里设置管理员密码，实际应用中应该使用加密存储的密码
-    const adminPassword = "admin123"; // 请修改为更安全的密码
+    const adminPassword = "interesting-sky.china-vo.org123..."; // 请修改为更安全的密码
     
     if (password === adminPassword) {
         // 登录成功，设置session
