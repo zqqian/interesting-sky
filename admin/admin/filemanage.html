@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有趣天文奇观 文章管理</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        button.edit {
+            background-color: #2196F3;
+        }
+        
+        button.edit:hover {
+            background-color: #0b7dda;
+        }
+        
+        button.delete {
+            background-color: #f44336;
+        }
+        
+        button.delete:hover {
+            background-color: #d32f2f;
+        }
+        
+        .search-box {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .file-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .empty-message {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* 进度条样式 */
+        .progress-container {
+            margin-top: 20px;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .progress-bar {
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        .progress-error .progress-fill {
+            background-color: #f44336;
+        }
+        
+        .progress-message {
+            font-size: 14px;
+            min-height: 100px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+            white-space: pre-line;
+        }
+        
+        /* 确认对话框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 400px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .modal-title {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        /* 缓存信息样式 */
+        .cache-info {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #cacheStatus {
+            font-weight: bold;
+        }
+        
+        #cacheStatus.cached {
+            color: #2196F3;
+        }
+        
+        #cacheStatus.fresh {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>有趣天文奇观 文章管理</h1>
+    
+    <div class="header-actions">
+        <div class="action-buttons">
+            <button onclick="location.href='index2.html'">新建文章</button>
+            <button id="generateBtn" onclick="showGenerateModal()">生成 HTML</button>
+            <button id="downloadZipBtn" onclick="downloadLatestArticlesZip()" disabled>下载文章 ZIP</button>
+            <button id="refreshBtn" onclick="refreshFileList()">获取文章列表</button>
+            <button id="gitPullBtn" onclick="executeGitPull()">Git Pull</button>
+            <button id="gitPushBtn" onclick="showGitPushModal()">Git Commit & Push</button>
+        </div>
+        <input type="text" class="search-box" id="searchBox" placeholder="搜索文章..." oninput="filterFiles()">
+    </div>
+    
+    <!-- 缓存状态信息 -->
+    <div class="cache-info" id="cacheInfo">
+        <span id="cacheStatus"></span>
+        <span id="lastUpdateTime"></span>
+    </div>
+    
+    <!-- Git Pull进度条 -->
+    <div class="progress-container" id="gitPullProgressContainer">
+        <h3>Git Pull 执行进度</h3>
+        <div class="progress-bar">
+            <div class="progress-fill" id="gitPullProgressFill"></div>
+        </div>
+        <div class="progress-message" id="gitPullProgressMessage"></div>
+    </div>
+    
+    <!-- Git Push进度条 -->
+    <div class="progress-container" id="gitPushProgressContainer">
+        <h3>Git Commit & Push 执行进度</h3>
+        <div class="progress-bar">
+            <div class="progress-fill" id="gitPushProgressFill"></div>
+        </div>
+        <div class="progress-message" id="gitPushProgressMessage"></div>
+    </div>
+    
+    <!-- 更新文章列表进度条 -->
+    <div class="progress-container" id="refreshProgressContainer">
+        <h3>更新文章列表进度</h3>
+        <div class="progress-bar">
+            <div class="progress-fill" id="refreshProgressFill"></div>
+        </div>
+        <div class="progress-message" id="refreshProgressMessage"></div>
+    </div>
+    
+    <!-- 进度条和消息区域 - 移动到文章列表之前 -->
+    <div class="progress-container" id="progressContainer">
+        <h3>生成进度</h3>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-message" id="progressMessage"></div>
+    </div>
+    
+    <div id="fileList">
+        <p class="loading">加载中...</p>
+    </div>
+    
+    <!-- 确认删除对话框 -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">确认删除</h3>
+            <p>您确定要删除文章 "<span id="deleteFileName"></span>" 吗？此操作不可撤销。</p>
+            <div class="modal-actions">
+                <button onclick="closeDeleteModal()">取消</button>
+                <button class="delete" onclick="confirmDelete()">删除</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Git Push对话框 -->
+    <div id="gitPushModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Git Commit & Push</h3>
+            <p>请输入提交信息：</p>
+            <input type="text" id="commitMessage" placeholder="更新博客内容" style="width: 100%; padding: 8px; margin: 10px 0; box-sizing: border-box;">
+            <div class="modal-actions">
+                <button onclick="closeGitPushModal()">取消</button>
+                <button onclick="executeGitPush()">提交并推送</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 生成HTML对话框 -->
+    <div id="generateModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">生成 HTML</h3>
+            <p>请选择生成方式：</p>
+            <div style="margin: 15px 0;">
+                <label style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <input type="checkbox" id="cleanFirstCheckbox" style="margin-right: 10px;">
+                    <span>彻底重新生成（先执行 hexo clean）</span>
+                </label>
+                <div style="font-size: 12px; color: #666; margin-left: 25px;">
+                    选中此选项将先清理缓存，然后重新生成所有页面。这可能需要更长的时间，但有助于解决一些缓存问题。
+                </div>
+                
+                <label style="display: flex; align-items: center; margin-top: 15px; margin-bottom: 10px;">
+                    <input type="checkbox" id="createZipCheckbox" style="margin-right: 10px;">
+                    <span>生成后创建变更文章的ZIP包</span>
+                </label>
+                <div style="font-size: 12px; color: #666; margin-left: 25px;">
+                    选中此选项将在生成完成后，创建包含新生成或有变化的文章的ZIP包，方便下载。
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button onclick="closeGenerateModal()">取消</button>
+                <button onclick="executeGenerateHexo()">开始生成</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 全局变量
+        let allFiles = [];
+        let fileToDelete = null;
+        let eventSource = null;
+        let refreshEventSource = null;
+        let gitPullEventSource = null;
+        let gitPushEventSource = null;
+        
+        // 页面加载时获取文件列表
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchFiles();
+            checkLatestZip();
+        });
+        
+        // 检查是否有最新的ZIP文件
+        async function checkLatestZip() {
+            try {
+                const response = await fetch('/latest-articles-zip');
+                if (response.ok) {
+                    const data = await response.json();
+                    // 启用下载按钮
+                    const downloadBtn = document.getElementById('downloadZipBtn');
+                    downloadBtn.disabled = false;
+                    downloadBtn.title = `下载最新文章包: ${data.filename}`;
+                }
+            } catch (error) {
+                console.log('没有可用的ZIP文件:', error);
+            }
+        }
+        
+        // 下载最新的文章ZIP包
+        async function downloadLatestArticlesZip() {
+            try {
+                const response = await fetch('/latest-articles-zip');
+                if (!response.ok) {
+                    throw new Error('没有可用的ZIP文件');
+                }
+                
+                const data = await response.json();
+                // 创建一个临时链接并点击它来下载文件
+                const link = document.createElement('a');
+                link.href = data.url;
+                link.download = data.filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {
+                alert(`下载失败: ${error.message}`);
+            }
+        }
+        
+        // 获取文件列表
+        async function fetchFiles(forceRefresh = false) {
+            try {
+                const url = forceRefresh ? '/files?refresh=true' : '/files';
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                allFiles = data.files;
+                renderFileList(allFiles);
+                
+                // 更新缓存状态信息
+                updateCacheInfo(data.cached, data.lastCacheTime);
+            } catch (error) {
+                console.error('获取文件列表失败:', error);
+                document.getElementById('fileList').innerHTML = `
+                    <p class="empty-message">获取文件列表失败: ${error.message}</p>
+                `;
+            }
+        }
+        
+        // 更新缓存状态信息
+        function updateCacheInfo(isCached, lastCacheTime) {
+            const cacheStatus = document.getElementById('cacheStatus');
+            const lastUpdateTime = document.getElementById('lastUpdateTime');
+            
+            if (isCached) {
+                cacheStatus.textContent = "使用缓存的文章列表";
+                cacheStatus.className = "cached";
+            } else {
+                cacheStatus.textContent = "使用最新的文章列表";
+                cacheStatus.className = "fresh";
+            }
+            
+            if (lastCacheTime) {
+                const date = new Date(lastCacheTime);
+                lastUpdateTime.textContent = `上次更新: ${date.toLocaleString()}`;
+            } else {
+                lastUpdateTime.textContent = "";
+            }
+        }
+        
+        // 刷新文件列表（带进度条）
+        function refreshFileList() {
+            // 显示进度容器
+            const progressContainer = document.getElementById("refreshProgressContainer");
+            const progressFill = document.getElementById("refreshProgressFill");
+            const progressMessage = document.getElementById("refreshProgressMessage");
+            const refreshBtn = document.getElementById("refreshBtn");
+            
+            progressContainer.style.display = "flex";
+            progressFill.style.width = "0%";
+            progressMessage.innerHTML = "正在连接服务器...";
+            refreshBtn.disabled = true;
+            
+            // 关闭旧的SSE连接（如果存在）
+            if (refreshEventSource) {
+                refreshEventSource.close();
+            }
+            
+            // 创建新的SSE连接
+            refreshEventSource = new EventSource('/refresh-files');
+            
+            // 监听消息
+            refreshEventSource.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                
+                // 更新进度条
+                if (data.progress >= 0) {
+                    progressFill.style.width = `${data.progress}%`;
+                    progressContainer.classList.remove("progress-error");
+                } else {
+                    progressContainer.classList.add("progress-error");
+                    progressFill.style.width = "100%";
+                }
+                
+                // 添加消息到消息区域
+                const messageElement = document.createElement("div");
+                messageElement.textContent = data.message;
+                progressMessage.appendChild(messageElement);
+                
+                // 自动滚动到底部
+                progressMessage.scrollTop = progressMessage.scrollHeight;
+                
+                // 如果进度为100%或出错，关闭连接并启用按钮
+                if (data.progress === 100 || data.progress === -1) {
+                    refreshEventSource.close();
+                    refreshBtn.disabled = false;
+                    
+                    // 刷新完成后获取最新的文件列表
+                    if (data.progress === 100) {
+                        fetchFiles();
+                    }
+                }
+            };
+            
+            // 处理连接错误
+            refreshEventSource.onerror = function() {
+                progressMessage.innerHTML += "<div>连接服务器出错</div>";
+                refreshEventSource.close();
+                refreshBtn.disabled = false;
+                progressContainer.classList.add("progress-error");
+            };
+            
+            // 发送刷新请求
+            fetch("/refresh-files", { method: "POST" })
+                .catch(error => {
+                    progressMessage.innerHTML += `<div>错误: ${error.message}</div>`;
+                    refreshBtn.disabled = false;
+                });
+        }
+        
+        // 渲染文件列表
+        function renderFileList(files) {
+            const fileListElement = document.getElementById('fileList');
+            
+            if (files.length === 0) {
+                fileListElement.innerHTML = `
+                    <p class="empty-message">没有找到文章，点击"新建文章"按钮创建一篇吧！</p>
+                `;
+                return;
+            }
+            
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th>文件名</th>
+                            <th>文章日期</th>
+                            <th>大小</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            files.forEach(file => {
+                const articleDate = new Date(file.articleDate).toLocaleString();
+                const fileSize = formatFileSize(file.size);
+                
+                html += `
+                    <tr>
+                        <td>${file.title}</td>
+                        <td>${file.filename}</td>
+                        <td>${articleDate}</td>
+                        <td>${fileSize}</td>
+                        <td class="file-actions">
+                            <button class="edit" onclick="editFile('${file.filename}')">编辑</button>
+                            <button class="delete" onclick="showDeleteModal('${file.filename}', '${file.title}')">删除</button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                    </tbody>
+                </table>
+            `;
+            
+            fileListElement.innerHTML = html;
+        }
+        
+        // 格式化文件大小
+        function formatFileSize(bytes) {
+            if (bytes < 1024) {
+                return bytes + ' B';
+            } else if (bytes < 1024 * 1024) {
+                return (bytes / 1024).toFixed(2) + ' KB';
+            } else {
+                return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+            }
+        }
+        
+        // 搜索过滤文件
+        function filterFiles() {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            
+            if (!searchTerm) {
+                renderFileList(allFiles);
+                return;
+            }
+            
+            const filteredFiles = allFiles.filter(file => 
+                file.title.toLowerCase().includes(searchTerm) || 
+                file.filename.toLowerCase().includes(searchTerm)
+            );
+            
+            renderFileList(filteredFiles);
+        }
+        
+        // 编辑文件
+        function editFile(filename) {
+            window.location.href = `index2.html?file=${encodeURIComponent(filename)}`;
+        }
+        
+        // 显示删除确认对话框
+        function showDeleteModal(filename, title) {
+            fileToDelete = filename;
+            document.getElementById('deleteFileName').textContent = title || filename;
+            document.getElementById('deleteModal').style.display = 'block';
+        }
+        
+        // 关闭删除确认对话框
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+            fileToDelete = null;
+        }
+        
+        // 确认删除文件
+        async function confirmDelete() {
+            if (!fileToDelete) return;
+            
+            try {
+                // 确保文件名不包含.md后缀，因为服务器会处理
+                const filename = fileToDelete.endsWith('.md') 
+                    ? fileToDelete 
+                    : `${fileToDelete}.md`;
+                
+                const response = await fetch(`/file/${encodeURIComponent(filename)}`, {
+                    method: 'DELETE'
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                
+                // 关闭对话框
+                closeDeleteModal();
+                
+                // 重新获取文件列表
+                await fetchFiles(true); // 强制刷新文件列表
+                
+                // 显示成功消息
+                alert(result.message);
+            } catch (error) {
+                console.error('删除文件失败:', error);
+                alert(`删除文件失败: ${error.message}`);
+                closeDeleteModal();
+            }
+        }
+        
+        // 显示生成HTML对话框
+        function showGenerateModal() {
+            document.getElementById('cleanFirstCheckbox').checked = false;
+            document.getElementById('createZipCheckbox').checked = false;
+            document.getElementById('generateModal').style.display = 'block';
+        }
+        
+        // 关闭生成HTML对话框
+        function closeGenerateModal() {
+            document.getElementById('generateModal').style.display = 'none';
+        }
+        
+        // 执行生成HTML
+        function executeGenerateHexo() {
+            // 获取是否需要彻底重新生成
+            const cleanFirst = document.getElementById('cleanFirstCheckbox').checked;
+            const createZip = document.getElementById('createZipCheckbox').checked;
+            
+            // 关闭对话框
+            closeGenerateModal();
+            
+            // 显示进度容器
+            const progressContainer = document.getElementById("progressContainer");
+            const progressFill = document.getElementById("progressFill");
+            const progressMessage = document.getElementById("progressMessage");
+            const generateBtn = document.getElementById("generateBtn");
+            
+            progressContainer.style.display = "flex";
+            progressFill.style.width = "0%";
+            progressMessage.innerHTML = "正在连接服务器...";
+            generateBtn.disabled = true;
+            
+            // 关闭旧的SSE连接（如果存在）
+            if (eventSource) {
+                eventSource.close();
+            }
+            
+            // 创建新的SSE连接
+            eventSource = new EventSource('/progress-stream');
+            
+            // 监听消息
+            eventSource.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                
+                // 更新进度条
+                if (data.progress >= 0) {
+                    progressFill.style.width = `${data.progress}%`;
+                    progressContainer.classList.remove("progress-error");
+                } else {
+                    progressContainer.classList.add("progress-error");
+                    progressFill.style.width = "100%";
+                }
+                
+                // 添加消息到消息区域
+                const messageElement = document.createElement("div");
+                messageElement.textContent = data.message;
+                progressMessage.appendChild(messageElement);
+                
+                // 自动滚动到底部
+                progressMessage.scrollTop = progressMessage.scrollHeight;
+                
+                // 如果进度为100%或出错，关闭连接并启用按钮
+                if (data.progress === 100 || data.progress === -1) {
+                    eventSource.close();
+                    generateBtn.disabled = false;
+                    
+                    // 如果生成成功，检查ZIP文件
+                    if (data.progress === 100) {
+                        checkLatestZip();
+                    }
+                }
+            };
+            
+            // 处理连接错误
+            eventSource.onerror = function() {
+                progressMessage.innerHTML += "<div>连接服务器出错</div>";
+                eventSource.close();
+                generateBtn.disabled = false;
+                progressContainer.classList.add("progress-error");
+            };
+            
+            // 发送生成请求
+            fetch("/generate", { 
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ cleanFirst, createZip })
+            }).catch(error => {
+                progressMessage.innerHTML += `<div>错误: ${error.message}</div>`;
+                generateBtn.disabled = false;
+            });
+        }
+        
+        // 执行Git Pull
+        function executeGitPull() {
+            // 显示进度容器
+            const progressContainer = document.getElementById("gitPullProgressContainer");
+            const progressFill = document.getElementById("gitPullProgressFill");
+            const progressMessage = document.getElementById("gitPullProgressMessage");
+            const gitPullBtn = document.getElementById("gitPullBtn");
+            
+            progressContainer.style.display = "flex";
+            progressFill.style.width = "0%";
+            progressMessage.innerHTML = "正在连接服务器...";
+            gitPullBtn.disabled = true;
+            
+            // 关闭旧的SSE连接（如果存在）
+            if (gitPullEventSource) {
+                gitPullEventSource.close();
+            }
+            
+            // 创建新的SSE连接
+            gitPullEventSource = new EventSource('/git-pull-stream');
+            
+            // 监听消息
+            gitPullEventSource.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                
+                // 更新进度条
+                if (data.progress >= 0) {
+                    progressFill.style.width = `${data.progress}%`;
+                    progressContainer.classList.remove("progress-error");
+                } else {
+                    progressContainer.classList.add("progress-error");
+                    progressFill.style.width = "100%";
+                }
+                
+                // 添加消息到消息区域
+                const messageElement = document.createElement("div");
+                messageElement.textContent = data.message;
+                progressMessage.appendChild(messageElement);
+                
+                // 自动滚动到底部
+                progressMessage.scrollTop = progressMessage.scrollHeight;
+                
+                // 如果进度为100%或出错，关闭连接并启用按钮
+                if (data.progress === 100 || data.progress === -1) {
+                    gitPullEventSource.close();
+                    gitPullBtn.disabled = false;
+                    
+                    // 如果成功，刷新文件列表
+                    if (data.progress === 100) {
+                        fetchFiles(true);
+                    }
+                }
+            };
+            
+            // 处理连接错误
+            gitPullEventSource.onerror = function() {
+                progressMessage.innerHTML += "<div>连接服务器出错</div>";
+                gitPullEventSource.close();
+                gitPullBtn.disabled = false;
+                progressContainer.classList.add("progress-error");
+            };
+            
+            // 发送Git Pull请求
+            fetch("/git-pull", { method: "POST" })
+                .catch(error => {
+                    progressMessage.innerHTML += `<div>错误: ${error.message}</div>`;
+                    gitPullBtn.disabled = false;
+                });
+        }
+        
+        // 点击页面其他区域关闭模态框
+        window.onclick = function(event) {
+            const deleteModal = document.getElementById('deleteModal');
+            const gitPushModal = document.getElementById('gitPushModal');
+            const generateModal = document.getElementById('generateModal');
+            
+            if (event.target === deleteModal) {
+                closeDeleteModal();
+            } else if (event.target === gitPushModal) {
+                closeGitPushModal();
+            } else if (event.target === generateModal) {
+                closeGenerateModal();
+            }
+        }
+        
+        // 显示Git Push对话框
+        function showGitPushModal() {
+            document.getElementById('commitMessage').value = "";
+            document.getElementById('gitPushModal').style.display = 'block';
+        }
+        
+        // 关闭Git Push对话框
+        function closeGitPushModal() {
+            document.getElementById('gitPushModal').style.display = 'none';
+        }
+        
+        // 执行Git Commit & Push
+        function executeGitPush() {
+            // 获取提交信息
+            const commitMessage = document.getElementById('commitMessage').value || "更新博客内容";
+            
+            // 关闭对话框
+            closeGitPushModal();
+            
+            // 显示进度容器
+            const progressContainer = document.getElementById("gitPushProgressContainer");
+            const progressFill = document.getElementById("gitPushProgressFill");
+            const progressMessage = document.getElementById("gitPushProgressMessage");
+            const gitPushBtn = document.getElementById("gitPushBtn");
+            
+            progressContainer.style.display = "flex";
+            progressFill.style.width = "0%";
+            progressMessage.innerHTML = "正在连接服务器...";
+            gitPushBtn.disabled = true;
+            
+            // 关闭旧的SSE连接（如果存在）
+            if (gitPushEventSource) {
+                gitPushEventSource.close();
+            }
+            
+            // 创建新的SSE连接
+            gitPushEventSource = new EventSource('/git-push-stream');
+            
+            // 监听消息
+            gitPushEventSource.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                
+                // 更新进度条
+                if (data.progress >= 0) {
+                    progressFill.style.width = `${data.progress}%`;
+                    progressContainer.classList.remove("progress-error");
+                } else {
+                    progressContainer.classList.add("progress-error");
+                    progressFill.style.width = "100%";
+                }
+                
+                // 添加消息到消息区域
+                const messageElement = document.createElement("div");
+                messageElement.textContent = data.message;
+                progressMessage.appendChild(messageElement);
+                
+                // 自动滚动到底部
+                progressMessage.scrollTop = progressMessage.scrollHeight;
+                
+                // 如果进度为100%或出错，关闭连接并启用按钮
+                if (data.progress === 100 || data.progress === -1) {
+                    gitPushEventSource.close();
+                    gitPushBtn.disabled = false;
+                }
+            };
+            
+            // 处理连接错误
+            gitPushEventSource.onerror = function() {
+                progressMessage.innerHTML += "<div>连接服务器出错</div>";
+                gitPushEventSource.close();
+                gitPushBtn.disabled = false;
+                progressContainer.classList.add("progress-error");
+            };
+            
+            // 发送Git Push请求
+            fetch("/git-push", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: commitMessage })
+            }).catch(error => {
+                progressMessage.innerHTML += `<div>错误: ${error.message}</div>`;
+                gitPushBtn.disabled = false;
+            });
+        }
+        
+        // 生成HTML（旧函数，保留用于兼容性）
+        function generateHexo() {
+            showGenerateModal();
+        }
+    </script>
+</body>
+</html>
