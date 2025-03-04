@@ -72,8 +72,8 @@ const checkAuth = (req, res, next) => {
     }
 };
 
-// 保护admin目录下的所有请求（包括静态文件）
-app.use('/', (req, res, next) => {
+// 保护根目录下的所有请求（包括静态文件）
+app.use('/admin', (req, res, next) => {
     // 如果是登录请求，直接通过
     if (req.path === '/login' && req.method === 'POST') {
         return next();
