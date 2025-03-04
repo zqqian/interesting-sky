@@ -40,8 +40,8 @@ const storage = multer.diskStorage({
         cb(null, dir); // 上传文件保存路径
     },
     filename: (req, file, cb) => {
-        const ext = path.extname(file.originalname);
-        cb(null, Date.now() + ext); // 使用时间戳作为文件名避免冲突
+        // 直接使用原始文件名，如果有冲突则覆盖
+        cb(null, file.originalname);
     }
 });
 
