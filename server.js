@@ -561,7 +561,7 @@ app.post("/generate", (req, res) => {
 // 创建新文章的ZIP文件
 async function createArticlesZip(files) {
     const publicDir = path.join(__dirname, "public");
-    const zipDir = path.join(__dirname, "public/downloads");
+    const zipDir = path.join(__dirname, "admin/downloads");
     const zipFilename = `articles_${Date.now()}.zip`;
     const zipPath = path.join(zipDir, zipFilename);
     
