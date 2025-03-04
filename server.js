@@ -5,9 +5,21 @@ const path = require("path");
 const { exec, spawn } = require("child_process");
 const multer = require("multer"); // 添加 multer
 const archiver = require("archiver"); // 添加 archiver 用于创建ZIP文件
+const session = require("express-session"); // 添加 session 支持
 
 const app = express();
 const PORT = 3000;
+
+// 配置 session
+app.use(session({
+    secret: 'your-secret-key', // 用于签名会话ID cookie的密钥
+    resave: false, // 强制保存会话即使它没有被修改
+    saveUninitialized: false, // 强制将未初始化的会话保存到存储中
+    cookie: { 
+        secure: false, // 如果为true，则仅通过HTTPS发送cookie
+        maxAge: 3600000 // cookie有效期为1小时
+    }
+}));
 
 // 配置 multer 用于文件上传
 const storage = multer.diskStorage({
@@ -48,6 +60,30 @@ const upload = multer({
 });
 
 app.use(bodyParser.json());
+
+// 中间件：检查用户是否已登录
+const checkAuth = (req, res, next) => {
+    // 检查session中的认证状态
+    if (req.session.isAuthenticated) {
+        next(); // 已认证，继续处理请求
+    } else {
+        // 未认证，重定向到登录页面
+        res.redirect('/login.html');
+    }
+};
+
+// 保护admin目录下的所有请求（包括静态文件）
+app.use('/admin', (req, res, next) => {
+    // 如果是登录请求，直接通过
+    if (req.path === '/login' && req.method === 'POST') {
+        return next();
+    }
+    
+    // 其他admin路径需要验证
+    checkAuth(req, res, next);
+});
+
+// 静态文件服务 - 放在认证中间件之后
 app.use(express.static("public"));
 
 // 创建上传目录（如果不存在）
@@ -58,6 +94,38 @@ if (!fs.existsSync(uploadDir)) {
 
 // 创建一个 SSE 客户端集合
 const clients = [];
+
+// 管理员登录路由
+app.post('/admin/login', (req, res) => {
+    const { password } = req.body;
+    
+    // 这里设置管理员密码，实际应用中应该使用加密存储的密码
+    const adminPassword = "admin123"; // 请修改为更安全的密码
+    
+    if (password === adminPassword) {
+        // 登录成功，设置session
+        req.session.isAuthenticated = true;
+        res.json({ success: true });
+    } else {
+        // 登录失败
+        res.status(401).json({ success: false, message: "密码错误" });
+    }
+});
+
+// 登出路由
+app.get('/admin/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/login.html');
+});
+
+// 检查认证状态的路由
+app.get('/admin/check-auth', (req, res) => {
+    if (req.session.isAuthenticated) {
+        res.status(200).json({ authenticated: true });
+    } else {
+        res.status(401).json({ authenticated: false });
+    }
+});
 
 // SSE 连接处理
 app.get('/progress-stream', (req, res) => {
