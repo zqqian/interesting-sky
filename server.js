@@ -30,7 +30,7 @@ const storage = multer.diskStorage({
         const month = String(date.getMonth() + 1).padStart(2, '0');
         
         // 创建图片目录结构 images/YYYY/MM
-        const dir = path.join(__dirname, "public/images", String(year), month);
+        const dir = path.join("/var/www/html/images", String(year), month);
         
         // 确保目录存在
         if (!fs.existsSync(dir)){
@@ -73,7 +73,7 @@ const checkAuth = (req, res, next) => {
 };
 
 // 保护admin目录下的所有请求（包括静态文件）
-app.use('/admin', (req, res, next) => {
+app.use('/', (req, res, next) => {
     // 如果是登录请求，直接通过
     if (req.path === '/login' && req.method === 'POST') {
         return next();
@@ -82,12 +82,13 @@ app.use('/admin', (req, res, next) => {
     // 其他admin路径需要验证
     checkAuth(req, res, next);
 });
+app.use('/images', express.static('/var/www/html/images'));
 
 // 静态文件服务 - 放在认证中间件之后
-app.use(express.static("public"));
+app.use(express.static("admin"));
 
 // 创建上传目录（如果不存在）
-const uploadDir = path.join(__dirname, "public/images");
+const uploadDir = "/var/www/html/images";
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
 }
