@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexo 在线 Markdown 编辑器</title>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 0; 
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .header {
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        #editor { 
+            width: 100%; 
+            flex: 1;
+        }
+        
+        /* 输入区域样式 */
+        .input-container {
+            margin-bottom: 0;
+        }
+        
+        .input-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .input-hint {
+            font-size: 12px;
+            color: #666;
+            margin-top: 3px;
+        }
+        
+        #filename {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        /* 按钮容器样式 */
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            align-items: center;
+        }
+        
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        /* 上传按钮样式 */
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .upload-btn {
+            border: 2px solid gray;
+            color: gray;
+            background-color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .upload-btn-wrapper input[type=file] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        /* 上传进度样式 */
+        .upload-progress {
+            display: none;
+            margin-top: 10px;
+            height: 5px;
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 3px;
+        }
+        
+        .upload-progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #4caf50;
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+        
+        /* 进度条样式 */
+        .progress-container {
+            margin-top: 20px;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .progress-bar {
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        .progress-error .progress-fill {
+            background-color: #f44336;
+        }
+        
+        .progress-message {
+            font-size: 14px;
+            min-height: 100px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+            white-space: pre-line;
+        }
+        
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .top-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        
+        .file-controls {
+            flex: 1;
+        }
+        
+        .action-controls {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .top-controls {
+                flex-direction: column;
+            }
+            
+            .action-controls {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>有趣天文奇观 文章编辑器</h2>
+        
+        <div class="top-controls">
+            <div class="file-controls">
+                <div class="input-container">
+                    <label for="filename" class="input-label">文件名</label>
+                    <input type="text" id="filename" placeholder="输入文件名（不含.md扩展名）" />
+                    <div class="input-hint">此名称将用作保存的文件名和文章URL路径，不会自动设置为文章标题</div>
+                </div>
+            </div>
+            
+            <div class="action-controls">
+                <button onclick="saveMarkdown()">保存 Markdown</button>
+                <!-- <button onclick="generateHexo()" id="generateBtn">生成 HTML</button> -->
+                
+                <!-- 图片上传按钮 -->
+                <div class="upload-btn-wrapper">
+                    <button class="upload-btn">上传图片</button>
+                    <input type="file" id="imageUpload" accept="image/jpeg,image/png,image/gif" />
+                </div>
+            </div>
+        </div>
+        
+        <!-- 上传进度条 -->
+        <div class="upload-progress" id="uploadProgress">
+            <div class="upload-progress-bar" id="uploadProgressBar"></div>
+        </div>
+        
+        <!-- 进度条和消息区域 -->
+        <div class="progress-container" id="progressContainer">
+            <h3>生成进度</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-message" id="progressMessage"></div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div id="editor"></div>
+    </div>
+
+    <script>
+        // 格式化日期函数
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            const seconds = String(date.getSeconds()).padStart(2, '0');
+            
+            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        }
+        
+        // 生成初始Markdown内容
+        function getInitialMarkdown() {
+            const now = new Date();
+            const formattedDate = formatDate(now);
+            
+            return `---
+title: 请在此处设置文章标题
+categories:
+  - - 默认分类
+date: ${formattedDate}
+author: 
+---
+
+`;
+        }
+        
+        // 解析URL参数
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+        
+        // 加载文件内容
+        async function loadFileContent(filename) {
+            try {
+                const response = await fetch(`/file?name=${encodeURIComponent(filename)}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data.content;
+            } catch (error) {
+                console.error('加载文件失败:', error);
+                alert(`加载文件失败: ${error.message}`);
+                return null;
+            }
+        }
+        
+        // 创建编辑器实例（初始为空，稍后设置内容）
+        const editor = new toastui.Editor({
+            el: document.querySelector("#editor"),
+            height: "100%",
+            initialEditType: "markdown",
+            previewStyle: "vertical",
+            // 不设置初始值，等待检查URL参数后再设置
+            toolbarItems: [
+                ['heading', 'bold', 'italic', 'strike'],
+                ['hr', 'quote'],
+                ['ul', 'ol', 'task', 'indent', 'outdent'],
+                ['table', 'link'],
+                ['code', 'codeblock']
+            ]
+        });
+        
+        // 页面加载时检查URL参数并加载文件
+        (async function() {
+            const fileParam = getUrlParameter('file');
+            if (fileParam) {
+                // 如果URL中包含文件参数
+                const filename = fileParam.endsWith('.md') 
+                    ? fileParam.slice(0, -3) // 移除.md后缀
+                    : fileParam;
+                
+                document.getElementById('filename').value = filename;
+                
+                // 加载文件内容
+                const content = await loadFileContent(filename);
+                if (content) {
+                    // 设置编辑器内容
+                    editor.setMarkdown(content);
+                    console.log(`已加载文件: ${filename}.md`);
+                    
+                    // 设置页面标题，包含文件名
+                    document.title = `编辑: ${filename} - Hexo 在线 Markdown 编辑器`;
+                } else {
+                    // 加载失败，使用默认内容
+                    editor.setMarkdown(getInitialMarkdown());
+                }
+            } else {
+                // 没有文件参数，使用默认内容
+                editor.setMarkdown(getInitialMarkdown());
+                document.title = "新建文章 - Hexo 在线 Markdown 编辑器";
+            }
+        })();
+        
+        // 处理浏览器前进/后退按钮
+        window.addEventListener('popstate', async function(event) {
+            if (event.state && event.state.filename) {
+                // 如果有状态信息，加载对应文件
+                const filename = event.state.filename;
+                document.getElementById('filename').value = filename;
+                
+                const content = await loadFileContent(filename);
+                if (content) {
+                    editor.setMarkdown(content);
+                    document.title = `编辑: ${filename} - Hexo 在线 Markdown 编辑器`;
+                }
+            } else {
+                // 如果没有状态信息，检查URL参数
+                const fileParam = getUrlParameter('file');
+                if (fileParam) {
+                    const filename = fileParam.endsWith('.md') 
+                        ? fileParam.slice(0, -3) 
+                        : fileParam;
+                    
+                    document.getElementById('filename').value = filename;
+                    
+                    const content = await loadFileContent(filename);
+                    if (content) {
+                        editor.setMarkdown(content);
+                        document.title = `编辑: ${filename} - Hexo 在线 Markdown 编辑器`;
+                    }
+                } else {
+                    // 没有文件参数，重置为新建状态
+                    document.getElementById('filename').value = '';
+                    editor.setMarkdown(getInitialMarkdown());
+                    document.title = "新建文章 - Hexo 在线 Markdown 编辑器";
+                }
+            }
+        });
+
+        // 图片上传功能
+        document.getElementById('imageUpload').addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (!files.length) return;
+            
+            const file = files[0];
+            const formData = new FormData();
+            formData.append('image', file);
+            
+            // 显示上传进度条
+            const uploadProgress = document.getElementById('uploadProgress');
+            const uploadProgressBar = document.getElementById('uploadProgressBar');
+            uploadProgress.style.display = 'block';
+            uploadProgressBar.style.width = '0%';
+            
+            // 使用 fetch API 上传图片
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/upload', true);
+            
+            xhr.upload.onprogress = function(e) {
+                if (e.lengthComputable) {
+                    const percentComplete = (e.loaded / e.total) * 100;
+                    uploadProgressBar.style.width = percentComplete + '%';
+                }
+            };
+            
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    uploadProgress.style.display = 'none';
+                    
+                    // 在 Markdown 中插入图片链接
+                    const imgMarkdown = `![${file.name}](${response.url})`;
+                    editor.insertText(imgMarkdown);
+                } else {
+                    alert('上传失败: ' + xhr.responseText);
+                    uploadProgress.style.display = 'none';
+                }
+            };
+            
+            xhr.onerror = function() {
+                alert('上传出错，请重试');
+                uploadProgress.style.display = 'none';
+            };
+            
+            xhr.send(formData);
+            
+            // 清空文件选择，允许重复上传同一文件
+            e.target.value = '';
+        });
+
+        // SSE 连接对象
+        let eventSource = null;
+
+        function saveMarkdown() {
+            const filename = document.getElementById("filename").value;
+            const content = editor.getMarkdown();
+            if (!filename) {
+                alert("请输入文件名");
+                return;
+            }
+
+            fetch("/save", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ filename, content })
+            }).then(response => response.text())
+              .then(data => {
+                  // 保存成功后更新URL，但不刷新页面
+                  const currentUrl = new URL(window.location.href);
+                  const baseUrl = currentUrl.origin + currentUrl.pathname;
+                  
+                  // 使用history API更新URL
+                  const newUrl = `${baseUrl}?file=${encodeURIComponent(filename)}`;
+                  history.pushState({ filename }, '', newUrl);
+                  
+                  // 显示保存成功消息
+                  alert(data);
+              })
+              .catch(error => console.error("Error:", error));
+        }
+
+        function generateHexo() {
+            // 显示进度容器
+            const progressContainer = document.getElementById("progressContainer");
+            const progressFill = document.getElementById("progressFill");
+            const progressMessage = document.getElementById("progressMessage");
+            const generateBtn = document.getElementById("generateBtn");
+            
+            progressContainer.style.display = "flex";
+            progressFill.style.width = "0%";
+            progressMessage.innerHTML = "正在连接服务器...";
+            generateBtn.disabled = true;
+            
+            // 关闭旧的SSE连接（如果存在）
+            if (eventSource) {
+                eventSource.close();
+            }
+            
+            // 创建新的SSE连接
+            eventSource = new EventSource('/progress-stream');
+            
+            // 监听消息
+            eventSource.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                
+                // 更新进度条
+                if (data.progress >= 0) {
+                    progressFill.style.width = `${data.progress}%`;
+                    progressContainer.classList.remove("progress-error");
+                } else {
+                    progressContainer.classList.add("progress-error");
+                    progressFill.style.width = "100%";
+                }
+                
+                // 添加消息到消息区域
+                const messageElement = document.createElement("div");
+                messageElement.textContent = data.message;
+                progressMessage.appendChild(messageElement);
+                
+                // 自动滚动到底部
+                progressMessage.scrollTop = progressMessage.scrollHeight;
+                
+                // 如果进度为100%或出错，关闭连接并启用按钮
+                if (data.progress === 100 || data.progress === -1) {
+                    eventSource.close();
+                    generateBtn.disabled = false;
+                }
+            };
+            
+            // 处理连接错误
+            eventSource.onerror = function() {
+                progressMessage.innerHTML += "<div>连接服务器出错</div>";
+                eventSource.close();
+                generateBtn.disabled = false;
+                progressContainer.classList.add("progress-error");
+            };
+            
+            // 发送生成请求
+            fetch("/generate", { method: "POST" })
+                .catch(error => {
+                    progressMessage.innerHTML += `<div>错误: ${error.message}</div>`;
+                    generateBtn.disabled = false;
+                });
+        }
+    </script>
+</body>
+</html>

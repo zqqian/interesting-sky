@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有趣天文奇观 管理员控制面板</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        h1 {
+            color: #333;
+            margin: 0;
+        }
+        .logout-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .admin-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .admin-link {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .admin-link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>有趣天文奇观 管理员控制面板</h1>
+            <a href="/admin/logout" class="logout-btn">退出登录</a>
+        </header>
+        
+        <div class="admin-links">
+            <a href="/admin/index2.html" class="admin-link">新建文章</a>
+            <a href="/admin/filemanage.html" class="admin-link">已有文章管理</a>
+            
+            <a href="http://interesting-sky.china-vo.org/" class="admin-link">访问China-VO版网站</a>
+            <a href="/" class="admin-link">访问本地网站</a>
+        </div>
+    </div>
+
+    <script>
+        // 检查登录状态
+        async function checkLoginStatus() {
+            try {
+                const response = await fetch('/admin/check-auth', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    // 如果未登录，重定向到登录页面
+                    window.location.href = '/login.html';
+                }
+            } catch (error) {
+                console.error('检查登录状态出错:', error);
+            }
+        }
+        
+        // 页面加载时检查登录状态
+        checkLoginStatus();
+    </script>
+</body>
+</html> 
