@@ -912,6 +912,6 @@ app.post("/git-push", (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '127.0.0.1',() => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
