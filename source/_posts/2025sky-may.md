@@ -19,16 +19,16 @@ date: 2025-04-22 00:30:00
 &emsp;&emsp;5月初入夜时的星空，巨蟹座位于头顶附近，往东方看下去，首先会看到狮子座，再下则是室女座，东北东方地平上方则可见到牧夫座的全貌。当天色完全暗下来以后，我们往东南方看过去，在仰角约30多度处可以看到有4颗亮度相当的3等星排列成巧妙的小四边形，这是乌鸦座，在光害少的地方相当容易辨认。晚间20~22时间，乌鸦座位于南方天空，沿着乌鸦座下方向开口所指的方向大致上就是天南极的位置。若位于低纬度且南方地平视野很好的地方时，在5月份的晚间21时前后，可以尝试在南方地平上寻找南十字座。南十字座包含有2颗一等星及二与三等星各1颗，因此在南天星座中是较为明显易认。  
 
 <p style="text-align: center">
-    <a href="images/Crux_Constellation_Southern.webp" target="_blank" title="南十字座"><img src="images/Crux_Constellation_Southern.webp" alt="南十字座"/></a>
+    <a href="/images/Crux_Constellation_Southern.webp" target="_blank" title="南十字座"><img src="/images/Crux_Constellation_Southern.webp" alt="南十字座"/></a>
 </p>
 <p style="text-align: center">
-    <a href="images/202505-planet.webp" target="_blank" title="2025年5月行星视直径"><img src="images/202505-planet.webp" alt="2025年5月行星视直径"/></a>
+    <a href="/images/202505-planet.webp" target="_blank" title="2025年5月行星视直径"><img src="/images/202505-planet.webp" alt="2025年5月行星视直径"/></a>
 </p>
 <p style="text-align: center">
-    <a href="images/venus_evening_chart202505.webp" target="_blank" title="2025年5月日出时水星、金星方位图"><img src="images/venus_evening_chart202505.webp" alt="2025年5月日出时水星、金星方位图"/></a>
+    <a href="/images/venus_evening_chart202505.webp" target="_blank" title="2025年5月日出时水星、金星方位图"><img src="/images/venus_evening_chart202505.webp" alt="2025年5月日出时水星、金星方位图"/></a>
 </p>
 <p style="text-align: center">
-    <a href="images/202505-lunar-phase.webp" target="_blank" title="2025年5月月相"><img src="images/202505-lunar-phase.webp" alt="2025年5月月相"/></a>
+    <a href="/images/202505-lunar-phase.webp" target="_blank" title="2025年5月月相"><img src="/images/202505-lunar-phase.webp" alt="2025年5月月相"/></a>
 </p>
 
 ## 太阳系天体动态  
@@ -63,7 +63,7 @@ date: 2025-04-22 00:30:00
 &emsp;&emsp;5月3日08:39北河三合月（视赤经7h46m51s），地心所见北河三在月球以北2.15度的地方，不过此时在地平线下。可在21点左右仰望西方天空，在月球的左上方有颗红色发光的火星，右下方有颗橙色的北河三，形成“双星夹月”之势。
 
 <p style="text-align: center">
-    <a href="images/20250503.webp" target="_blank" title="2025/5/3 “双星夹月”"><img src="images/20250503.webp" alt="2025/5/3 “双星夹月”"/></a>
+    <a href="/images/20250503.webp" target="_blank" title="2025/5/3 “双星夹月”"><img src="/images/20250503.webp" alt="2025/5/3 “双星夹月”"/></a>
 </p>
 
 ### 2025/5/4 忆神星冲日  
@@ -89,14 +89,14 @@ date: 2025-04-22 00:30:00
 </pre>
 
 <p style="text-align: center">
-    <a href="images/24-Solar-Terms-in-2025.webp" target="_blank" title="2025年二十四节气时刻表"><img src="images/24-Solar-Terms-in-2025.webp" alt="2025年二十四节气时刻表"/></a>
+    <a href="/images/24-Solar-Terms-in-2025.webp" target="_blank" title="2025年二十四节气时刻表"><img src="/images/24-Solar-Terms-in-2025.webp" alt="2025年二十四节气时刻表"/></a>
 </p>
 
 ### 2025/5/5 火星接近鬼星团（接近不到1度）  
 &emsp;&emsp;M44鬼星团位于巨蟹座中央的大型疏散星团，又称蜂巢星团，中国古代称为积尸气。虽然肉眼看起来是模糊的光团，但使用双筒或小型天文望远镜看的话就知道是一团恒星的集合。5月5日火星接近鬼星团，达到0.6度。用小型天文望远镜看，火星看起来像掠过鬼星团边缘的位置。因为比上次2024年12月接近时更接近，所以很有看头吧。火星每天都会改变位置，在前后的日子里也进行观测，观察它接近鬼星团，然后离开的样子也很有趣吧。  
 
 <p style="text-align: center">
-    <a href="images/saturns-rings-2025.webp" target="_blank" title="2025年5月5日火星接近鬼星团（积尸气）"><img src="images/saturns-rings-2025.webp" alt="2025年5月5日火星接近鬼星团（积尸气）"/></a>
+    <a href="/images/saturns-rings-2025.webp" target="_blank" title="2025年5月5日火星接近鬼星团（积尸气）"><img src="/images/saturns-rings-2025.webp" alt="2025年5月5日火星接近鬼星团（积尸气）"/></a>
 </p>
 
 ### 2025/5/6 宝瓶座η流星雨极大期（ZHR～50）★★  
@@ -130,7 +130,7 @@ date: 2025-04-22 00:30:00
 &emsp;&emsp;到明年中期为止土星环会持续纤细的状态，所以每次有机会都要观察一下。  
 
 <p style="text-align: center">
-    <a href="images/saturns-rings-2025.webp" target="_blank" title="2025年5月7日土星环消失"><img src="images/saturns-rings-2025.webp" alt="2025年5月7日土星环消失"/></a>
+    <a href="/images/saturns-rings-2025.webp" target="_blank" title="2025年5月7日土星环消失"><img src="/images/saturns-rings-2025.webp" alt="2025年5月7日土星环消失"/></a>
 </p>
 
 ### 2025/5/7 月掩明堂增二  
@@ -144,7 +144,7 @@ date: 2025-04-22 00:30:00
 掩星时长90分38秒      掩带宽3680.6公里  
 
 <p style="text-align: center">
-    <a href="images/20250507.webp" target="_blank" title="2025年5月7日月掩明堂增二中国见掩"><img src="images/20250507.webp" alt="2025年5月7日月掩明堂增二中国见掩"/></a><br/><a href="images/202505072.webp" target="_blank" title="2025年5月7日月掩明堂增二中国见掩"><img src="images/202505072.webp" alt="2025年5月7日月掩明堂增二中国见掩"/></a>
+    <a href="/images/20250507.webp" target="_blank" title="2025年5月7日月掩明堂增二中国见掩"><img src="/images/20250507.webp" alt="2025年5月7日月掩明堂增二中国见掩"/></a><br/><a href="/images/202505072.webp" target="_blank" title="2025年5月7日月掩明堂增二中国见掩"><img src="/images/202505072.webp" alt="2025年5月7日月掩明堂增二中国见掩"/></a>
 </p>
 <p style="text-align: center">
     <a href="/wp-content/uploads/2021/08/lunar-occultation.webp" target="_blank" title="月掩星"><img src="/wp-content/uploads/2021/08/lunar-occultation.webp" alt="月掩星"/></a>
@@ -170,14 +170,14 @@ date: 2025-04-22 00:30:00
 &emsp;&emsp;5月13日03:44土卫四环食土卫五，半影食始03时41分56秒，初亏03时42分46秒，环食始03时43分06秒，食甚03时43分34秒，环食终03时44分03秒，复圆03时44分23秒，半影食终03时45分13秒，历时197秒，最小角距0.052角秒，减光0.6等。  
 
 <p style="text-align: center">
-    <a href="images/2025-May-12-Mutual-Events-of-Saturn.webp" target="_blank" title="2025年5月13日凌晨03:44土卫四环食土卫五"><img src="images/2025-May-12-Mutual-Events-of-Saturn.webp" alt="2025年5月13日凌晨03:44土卫四环食土卫五"/></a>
+    <a href="/images/2025-May-12-Mutual-Events-of-Saturn.webp" target="_blank" title="2025年5月13日凌晨03:44土卫四环食土卫五"><img src="/images/2025-May-12-Mutual-Events-of-Saturn.webp" alt="2025年5月13日凌晨03:44土卫四环食土卫五"/></a>
 </p>
 
 #### 土卫二半影食土卫五  
 &emsp;&emsp;5月13日04:57土卫二半影食土卫五，半影食始04时55分26秒，食甚04时56分44秒，半影食终04时58分02秒，历时157秒，最小角距0.079角秒，减光0.1等。  
 
 <p style="text-align: center">
-    <a href="images/2025-May-12-04-Mutual-Events-of-Saturn.webp" target="_blank" title="2025年5月22日凌晨04:57土卫二半影食土卫五"><img src="images/2025-May-12-04-Mutual-Events-of-Saturn.webp" alt="2025年5月22日凌晨04:57土卫二半影食土卫五"/></a>
+    <a href="/images/2025-May-12-04-Mutual-Events-of-Saturn.webp" target="_blank" title="2025年5月22日凌晨04:57土卫二半影食土卫五"><img src="/images/2025-May-12-04-Mutual-Events-of-Saturn.webp" alt="2025年5月22日凌晨04:57土卫二半影食土卫五"/></a>
 </p>
 
 &emsp;&emsp;土卫五直径约1528公里，距离土星约52万7000公里，比土卫三、土卫四离土星更远。土卫五具有高几何反照率，其表面主要由四分之三的冰和四分之一的岩石构成的。2008年，卡西尼号飞船发现了土卫五周围环绕着大量碎片，这是第一次在卫星周围发现光环。卡西尼号飞船探测到土卫五的大气层中存在着氧气和二氧化碳。这也是迄今除地球之外第一次直接发现其它星球大气层中存在着氧气，尽管它很薄。  
@@ -209,7 +209,7 @@ date: 2025-04-22 00:30:00
 &emsp;&emsp;2025年5月22日凌晨04:45土卫三半影食土卫七，半影食始04时43分21秒，食甚04时44分37秒，半影食终04时45分52秒，历时151秒，最小角距0.146角秒，减光0.1等。请提前锁定土卫七。
 
 <p style="text-align: center">
-    <a href="images/2025-May-22-Mutual-Events-of-Saturn.webp" target="_blank" title="2025年5月22日凌晨04:45土卫三半影食土卫七"><img src="images/2025-May-22-Mutual-Events-of-Saturn.webp" alt="2025年5月22日凌晨04:45土卫三半影食土卫七"/></a>
+    <a href="/images/2025-May-22-Mutual-Events-of-Saturn.webp" target="_blank" title="2025年5月22日凌晨04:45土卫三半影食土卫七"><img src="/images/2025-May-22-Mutual-Events-of-Saturn.webp" alt="2025年5月22日凌晨04:45土卫三半影食土卫七"/></a>
 </p>
 
 &emsp;&emsp;土卫七（Hyperion，常译为“亥伯龙”、“海伯利安”）是土星最大的不规则、非球形的卫星。土卫七的平均半径为135公里，但由于土卫七相当于土豆形状，它的形状可以用它沿三个轴的直径来描述：410×260×220公里。1848年9月，美国天文学家威廉·邦德（William Cranch Bond）和乔治·邦德（George Phillips Bond）父子、英国天文学家威廉·拉塞尔（William Lassell）各自独立发现土卫七。卡西尼号在2005年9月26日飞掠土卫七时，探测器出乎预料地发现土卫七释放出强烈的带电粒子流，电压高达200伏。土卫七的表面很可能带静电，因为它沐浴在来自于太阳和土星的带电粒子中。  
@@ -218,7 +218,7 @@ date: 2025-04-22 00:30:00
 &emsp;&emsp;5月23日02:00土星合月（视赤经0h02m37s），地心所见土星在月球以南2.83度的地方。凌晨4点钟在东方低空可以看到月龄24的残月，正好处于四分之一发光状态。土星在月球的右侧，间隔比较窄，相当于手臂打直后食指与中指两指合并顶端的宽度，作为接近是个好条件。5月7日发生了土星环消失，土星光环非常细。有天文望远镜的人，顺便看看新奇的景象吧！  
 
 <p style="text-align: center">
-    <a href="images/20250523.webp" target="_blank" title="2025年5月23日凌晨土星合月"><img src="images/20250523.webp" alt="2025年5月23日凌晨土星合月"/></a>
+    <a href="/images/20250523.webp" target="_blank" title="2025年5月23日凌晨土星合月"><img src="/images/20250523.webp" alt="2025年5月23日凌晨土星合月"/></a>
 </p>
 
 ### 2025/5/23 巴西星掩星（垂直方向）  
@@ -231,7 +231,7 @@ date: 2025-04-22 00:30:00
 &emsp;&emsp;凌晨4点左右，请看东边低空，年度最大残月和启明星金星纵向排列，相当于手臂打直后，食指与中指两指合并顶端的宽度。农历四月廿七的残月，是年度最大残月，本来不发光的部分看起来会稍微发光，这叫做地球照，是反射地球上的光而发光的现象，为金星合月之美锦上添花。  
 
 <p style="text-align: center">
-    <a href="images/20250524.webp" target="_blank" title="2025年5月24日凌晨东方天空"><img src="images/20250524.webp" alt="2025年5月24日凌晨东方天空"/></a>
+    <a href="/images/20250524.webp" target="_blank" title="2025年5月24日凌晨东方天空"><img src="/images/20250524.webp" alt="2025年5月24日凌晨东方天空"/></a>
 </p>
 
 ### 2025/5/25 卵神星冲日  
@@ -248,14 +248,14 @@ date: 2025-04-22 00:30:00
 掩星时长92分47秒    掩带宽 3717.8公里	 
 
 <p style="text-align: center">
-    <a href="images/20250528.webp" target="_blank" title="2025年5月28日月掩五车五中国见掩"><img src="images/20250528.webp" alt="2025年5月28日月掩五车五中国见掩"/></a><br/><a href="images/202505282.webp" target="_blank" title="2025年5月7日月掩明堂增二中国见掩"><img src="images/202505282.webp" alt="2025年5月7日月掩明堂增二中国见掩"/></a>
+    <a href="/images/20250528.webp" target="_blank" title="2025年5月28日月掩五车五中国见掩"><img src="/images/20250528.webp" alt="2025年5月28日月掩五车五中国见掩"/></a><br/><a href="/images/202505282.webp" target="_blank" title="2025年5月7日月掩明堂增二中国见掩"><img src="/images/202505282.webp" alt="2025年5月7日月掩明堂增二中国见掩"/></a>
 </p>
 
 ### 2025/5/28 木星合月  
 &emsp;&emsp;5月28日21:12木星合月（视赤经5h47m57s），地心所见木星在月球以南5.21度的地方。日落后的早些时候可以看到月球和木星并排。在木星右侧稍微向上约5.4度的地方，有一个像线一样细的眉月。月光非常微弱，用肉眼很难找到吧。但是借助双筒望远镜的话，也许能找到。傍晚看到的这两个天体的接近是最后一次了。  
 
 <p style="text-align: center">
-    <a href="images/2025052820.webp" target="_blank" title="2025年5月28日傍晚西方天空"><img src="images/2025052820.webp" alt="2025年5月28日傍晚西方天空"/></a>
+    <a href="/images/2025052820.webp" target="_blank" title="2025年5月28日傍晚西方天空"><img src="/images/2025052820.webp" alt="2025年5月28日傍晚西方天空"/></a>
 </p>
 
 ### 2025/5/29 火星进入夏至时刻  
@@ -275,7 +275,7 @@ date: 2025-04-22 00:30:00
 掩星时长76分34秒   掩带宽  3912.5公里  
 
 <p style="text-align: center">
-    <a href="images/20250531.webp" target="_blank" title="2025年5月31日月掩鬼宿三中国见掩"><img src="images/20250531.webp" alt="2025年5月31日月掩鬼宿三中国见掩"/></a><br/><a href="images/202505312.webp" target="_blank" title="2025年5月31日月掩鬼宿三中国见掩"><img src="images/202505312.webp" alt="2025年5月31日月掩鬼宿三中国见掩"/></a>
+    <a href="/images/20250531.webp" target="_blank" title="2025年5月31日月掩鬼宿三中国见掩"><img src="/images/20250531.webp" alt="2025年5月31日月掩鬼宿三中国见掩"/></a><br/><a href="/images/202505312.webp" target="_blank" title="2025年5月31日月掩鬼宿三中国见掩"><img src="/images/202505312.webp" alt="2025年5月31日月掩鬼宿三中国见掩"/></a>
 </p>
 
 ## 详细天象  
