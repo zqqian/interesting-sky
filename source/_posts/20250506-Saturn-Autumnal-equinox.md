@@ -4,7 +4,7 @@ tags:
   - 土星
 categories:
   - 二分二至
-  - - recent-astronomical-events
+  - recent-astronomical-events
 date: 2025-04-29 23:20:00
 author: 杨旸
 ---
