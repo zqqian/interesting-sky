@@ -123,11 +123,13 @@ menu:
   categories: /categories/ || fab fa-th
   archives: /archives/ || fab fa-archive
   寿星天文历: /sxwnl.html || fab fa-calendar
-  2025年6月天象预报: /2025sky-Jun/ || fab fa-book
+  2025年6月天象预报: /2025sky-Jun/ || fab fa-star
   2025年重要天象: /2025-calendar-of-astronomical-events/ || fab fa-book
-  2025年日月食: /2025-eclipse/ || fab fa-moon-o
+  2025年日月食: /2025-eclipse/ || fal fa-eclipse
+  IAU流星雨列表: /list-of-all-meteor-showers/ || far fa-meteor
+  小行星轨道: https://www.astorb.com/ || far fa-stars
   天文通全球光污染地图: https://www.darkmap.cn/ || fab fa-map
-  天文通APP: https://laysky.com/ || fab fa-star
+  天文通APP: https://laysky.com/ || fal fa-mobile-android-alt
   晴天钟: http://www.7timer.cn/ || fab fa-clock-o
 #  schedule: /schedule/ || fa fa-calendar
 #  sitemap: /sitemap.xml || fa fa-sitemap
