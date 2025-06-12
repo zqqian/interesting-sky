@@ -12,6 +12,7 @@ categories:
 date: 2020-03-16 01:54:18
 ---
 资料整理：杨旸  
+资料来源：[IAU Meteor Data Center](https://www.ta3.sk/IAUC22DB/MDC2022/ "开新视窗-国际流星雨数据中心")
 执行标准：[https://forum.hkas.org.hk/thread-9180-1-1.html](https://forum.hkas.org.hk/thread-9180-1-1.html "开新视窗-香港天文学会")  
 
 &emsp;&emsp;国际天文学联合会流星雨数据中心（[IAU Meteor Data Center](https://www.ta3.sk/IAUC22DB/MDC2022/ "开新视窗-国际天文学联合会流星雨数据中心")）将流星区分成为24个流星群，其中110个确定，共列出1107个流星雨（包括已除名的流星雨）。它是依据[国际天文学联合会F1委员会](https://www.iau.org/science/scientific_bodies/working_groups/276/ "开新视窗-国际天文学联合会F1委员会")流星雨命名工作组为已经被确定的流星雨命名。现罗列于此，供读者查询（可按快捷键Ctrl+F查找流星雨代码）。关于流星雨中文译名原则，参见[解释性补充](#Translation_Principles "解释性补充")。国际惯例，流星雨名称均按辐射点所在的星座命名，而不是省略的“象限仪(座)流星雨”。  
