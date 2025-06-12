@@ -5,7 +5,7 @@ tags:
 categories:
   - - recent-astronomical-events
     - 合
-date: 2025-06-12 22:18:00
+date: 2025-06-12 22:20:00
 author: 杨旸
 ---
 
