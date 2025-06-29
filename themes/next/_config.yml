@@ -123,14 +123,14 @@ menu:
   categories: /categories/ || fab fa-th
   archives: /archives/ || fab fa-archive
   寿星天文历: /sxwnl.html || fab fa-calendar
-  2025年6月天象预报: /2025sky-Jun/ || fab fa-eye
+  2025年7月天象预报: /2025sky-Jul/ || fab fa-eye
   2025年重要天象: /2025-calendar-of-astronomical-events/ || fab fa-book
   2025年日月食: /2025-eclipse/ || fab fa-moon-o
   IAU流星雨中文名: /list-of-all-meteor-showers/ || fab fa-list
   IAU周期彗星编号: https://www.minorplanetcenter.net/iau/lists/PeriodicCodes.html || fab fa-list
   小行星轨道数据: https://www.astorb.com/ || fab fa-database
+  中国空间站实时位置: https://sathunt.com/ || fab fa-star
   天文通全球光污染地图: https://www.darkmap.cn/ || fab fa-map
-  天文通APP: https://laysky.com/ || fab fa-star
   晴天钟: http://www.7timer.cn/ || fab fa-clock-o
 #  schedule: /schedule/ || fa fa-calendar
 #  sitemap: /sitemap.xml || fa fa-sitemap
