@@ -404,35 +404,3 @@ https://www.astorb.com/info/167.html
 <p>
     　　2025年天象预报资料，可在“有趣天文奇观”网站下取得，欢迎多加利用！<a href="http://interesting-sky.china-vo.org/categories/year/" target="_self">http://interesting-sky.china-vo.org/categories/year/</a>
 </p>
-（正文完）
-<hr/>
-
-## 读者反馈  
-&emsp;&emsp;汉语是世界上最优美的语言。一字之差，天壤之别。  
-&emsp;&emsp;有位读者反馈，文章转载到微信公众号时，利用人工智能（Artificial Intelligence，AI）执行拼写和检查时，被提示正文中的《四季认星歌》有疑似“错别字”，请求修改。  
-
-<p style="text-align: center">
-    <a href="/images/20250630-weixin.webp" target="_blank" title="《四季认星歌》有疑似“错别字”？"><img src="/images/20250630-weixin.webp" alt="《四季认星歌》有疑似“错别字”？"/></a>
-</p>
-
-&emsp;&emsp;那么，这首歌是谁编写的？
-
-<p style="text-align: center">
-    <a href="/images/summer.webp" target="_blank" title="四季认星歌"><img src="/images/summer.webp" alt="四季认星歌"/></a>
-</p>
-
-&emsp;&emsp;图片来源：台北市立天文科学教育馆  
-
-&emsp;&emsp;不必多说，自然明白。  
-
-&emsp;&emsp;根据台湾教育主管部门的要求，学生不但要会唱《四季认星歌》，还要学会辨认歌词中的星座和亮星。  
-
-<p style="text-align: center">
-    <a href="/images/四季認星歌 新北市自然科學領域國小輔導小組分區輔導課例.webp" target="_blank" title="四季认星歌 新北市自然科学领域国小辅导小组分区辅导课例"><img src="/images/四季認星歌 新北市自然科學領域國小輔導小組分區輔導課例.webp" alt="四季认星歌 新北市自然科学领域国小辅导小组分区辅导课例"/></a>
-</p>
-
-&emsp;&emsp;相对而言，中国大陆的自然教育却严重不足。仅停留在一些零散的自然知识教育活动上，尚未形成系统的课程体系，与世界脱节。
-
-延伸阅读：  
-1、自然教育，应该这样教 https://www.cas.cn/zjs/201904/t20190415_4688804.shtml  
-2、义务教育阶段天文教育怎么做？专业人士这么说 https://nadc.china-vo.org/article/20230516144946?locale=zh_CN  
