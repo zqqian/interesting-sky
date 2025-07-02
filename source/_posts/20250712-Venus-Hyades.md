@@ -5,7 +5,6 @@ tags:
   - 毕宿五
 categories:
   - - recent-astronomical-events
-    - 合
 date: 2025-07-02 22:30:00
 author: 杨旸
 ---
