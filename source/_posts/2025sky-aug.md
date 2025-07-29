@@ -5,7 +5,7 @@ categories:
     - 2025年天象（天文年历）
   - - recent-astronomical-events
 author: 杨旸
-date: 2025-06-30 00:54:00
+date: 2025-07-30 01:14:00
 ---
 
 数据来源：中国科学院紫金山天文台  
