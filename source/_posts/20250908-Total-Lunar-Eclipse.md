@@ -4,7 +4,7 @@ tags:
   - 月全食
 categories:
   - - recent-astronomical-events
-date: 2025-04-29 22:59:00
+date: 2025-08-31 00:10:00
 author: 杨旸
 ---
 
