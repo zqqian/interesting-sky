@@ -2313,6 +2313,13 @@ S/2020 S10 2020  25113.0 -  2.0 26.5
 501P/Rankin  
 502P/NEAT  
 503P/PanSTARRS  
+504P/WISE-PanSTARRS  
+505P/Palomar  
+506P/WISE-LINEAR  
+507P/Lemmon  
+508P/McNaught  
+509P/Catalina  
+510P/Boattini  
 
 ## 已编号的流星雨（MDC总表）
 >
