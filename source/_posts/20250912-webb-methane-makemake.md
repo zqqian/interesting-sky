@@ -21,4 +21,4 @@ author: 杨旸
 
 &emsp;&emsp;这项发现不仅改变我们对鸟神星的认识，也提醒我们，就算位于遥远太阳系的边疆，这些冰封世界依然蕴藏活力，并在不断演化中。（编辑/台北天文馆蔡承颖）  
 
-资料来源：[Sci News](https://www.sci.news/astronomy/webb-methane-makemake-14202.html#google_vignette "开新视窗-Sci News")  
+资料来源：[Sci News](https://www.sci.news/astronomy/webb-methane-makemake-14202.html "开新视窗-Sci News")  
