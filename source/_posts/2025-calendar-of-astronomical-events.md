@@ -2320,6 +2320,9 @@ S/2020 S10 2020  25113.0 -  2.0 26.5
 508P/McNaught  
 509P/Catalina  
 510P/Boattini  
+511P/PanSTARRS  
+512P/PanSTARRS  
+513P/Broughton  
 
 ## 已编号的流星雨（MDC总表）
 >
