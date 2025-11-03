@@ -22,6 +22,10 @@ date: 2025-10-31 23:20:00
 御夫五星五边形，天河上面放风筝，<br/>
 冬夜星空认星座，全天最亮天狼星。<br/>
 （取自台北市立天文科学教育馆）</p>  
+
+<p style="text-align: center">
+    <a href="/images/202511-lunar-phase.webp" target="_blank" title="2025年11月月相"><img src="/images/202511-lunar-phase.webp" alt="2025年11月月相"/></a>
+</p>
 <p style="text-align: center">
     <a href="/images/202511-planet.webp" target="_blank" title="2025年11月行星视直径"><img src="/images/202511-planet.webp" alt="2025年11月行星视直径"/></a>
 </p>
@@ -36,9 +40,6 @@ date: 2025-10-31 23:20:00
 </p>
 <p style="text-align: center">
     <a href="/images/sunset-C2025R2-SWAN.webp" target="_blank" title="2025年日落时C/2025R2-SWAN斯万彗星方位图"><img src="/images/sunset-C2025R2-SWAN.webp" alt="2025年日落时C/2025R2-SWAN斯万彗星方位图"/></a>
-</p>
-<p style="text-align: center">
-    <a href="/images/202511-lunar-phase.webp" target="_blank" title="2025年11月月相"><img src="/images/202511-lunar-phase.webp" alt="2025年11月月相"/></a>
 </p>
 
 ## 太阳系天体动态  
