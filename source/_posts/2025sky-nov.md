@@ -32,6 +32,12 @@ date: 2025-10-31 23:20:00
     <a href="/images/mercury_evening_chart202511.webp" target="_blank" title="2025年11月日落时水星方位图"><img src="/images/mercury_evening_chart202511.webp" alt="2025年11月日落时水星方位图"/></a>
 </p>
 <p style="text-align: center">
+    <a href="/images/sunset-C2025A6-Lemmon.webp" target="_blank" title="2025年11月日落时C/2025A6-Lemmon莱蒙彗星方位图"><img src="/images/sunset-C2025A6-Lemmon.webp" alt="2025年11月日落时C/2025A6-Lemmon莱蒙彗星方位图"/></a>
+</p>
+<p style="text-align: center">
+    <a href="/images/sunset-C2025R2-SWAN.webp" target="_blank" title="2025年日落时C/2025R2-SWAN斯万彗星方位图"><img src="/images/sunset-C2025R2-SWAN.webp" alt="2025年日落时C/2025R2-SWAN斯万彗星方位图"/></a>
+</p>
+<p style="text-align: center">
     <a href="/images/202511-lunar-phase.webp" target="_blank" title="2025年11月月相"><img src="/images/202511-lunar-phase.webp" alt="2025年11月月相"/></a>
 </p>
 
@@ -262,6 +268,10 @@ https://www.bedekkingen.vvs.be/predictions/asteroids2025/PDF/A25_11083.pdf
 掩星详情：  
 https://cloud.occultwatcher.net/event/1784-884-51431-649842-H16835  
 https://www.bedekkingen.vvs.be/predictions/asteroids2025/PDF/A25_11127.pdf  
+
+<p style="text-align: center">
+    <a href="/images/202511210453.webp" target="_blank" title="2025年11月21日凌晨木星特洛伊小行星普丽阿姆斯星掩星中国见掩"><img src="/images/202511210453.webp" alt="2025年11月21日凌晨木星特洛伊小行星普丽阿姆斯星掩星中国见掩"/></a>
+</p>
 
 ### 2025/11/21 天王星冲日（整夜可见）  
 &emsp;&emsp;2025年11月21日20:25天王星冲日（金牛座，亮度5.6等，视直径3.8"）。天王星是仅次于海王星的第二颗离地球较远的行星。土星的轨道半径很长，为9.55个天文单位，而天王星的轨道是19.21个天文单位，所以它的距离正好是土星轨道的两倍。而且，土星的赤道半径为6万0268公里，而天王星为2万5559公里，仅为土星的40%左右。正因为如此，从地球上看天王星是黑暗的。这一次，它离地球很近。尽管如此，它的亮度还是5.6等，所以肉眼只能勉强看到。  
