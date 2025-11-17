@@ -387,7 +387,7 @@ https://www.bedekkingen.vvs.be/predictions/asteroids2025/PDF/A25_11127.pdf
 &emsp;&emsp;4K录像要求：MP4格式，3840×2160（16:9）分辨率，视频编码采用AVS3标准，码率不低于18Mbps；视频编码采用AVS2标准，码率不低于36Mbps，符合新国标。  
 
 ## 11月各地见月掩星时间表  
-&emsp;&emsp;月掩星根据ELP2000-82/HIP依巴谷星表恒星视位置预报2023年11月月掩星情况。主要包括掩始、掩终的东八区时（北京时）时刻，掩始掩终时刻的位置角（P，V分别由月面北点和最高点向东计量）和行星中心高度h及日出日落等。  
+&emsp;&emsp;月掩星根据ELP2000-82/HIP依巴谷星表恒星视位置预报2025年11月月掩星情况。主要包括掩始、掩终的东八区时（北京时）时刻，掩始掩终时刻的位置角（P，V分别由月面北点和最高点向东计量）和行星中心高度h及日出日落等。  
 
 <p><a href="/images/202511.webp" title="2025年11月月掩星"><img src="/images/202511.webp" alt="2025年11月月掩星"></a></p>
 <p><a href="/wp-content/uploads/2021/08/lunar-occultation.webp" title="月掩星"><img src="/wp-content/uploads/2021/08/lunar-occultation.webp" alt="月掩星"></a></p>
