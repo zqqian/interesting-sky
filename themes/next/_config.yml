@@ -123,8 +123,8 @@ menu:
   categories: /categories/ || fab fa-th
   archives: /archives/ || fab fa-archive
   寿星天文历: /sxwnl.html || fab fa-calendar
-  2025年11月天象预报: /2025sky-nov/ || fab fa-eye
-  2025年重要天象: /2025-calendar-of-astronomical-events/ || fab fa-book
+#  2025年11月天象预报: /2025sky-nov/ || fab fa-eye
+  2026年重要天象: /2026-calendar-of-astronomical-events/ || fab fa-book
   2026年日月食: /2026-eclipse/ || fab fa-moon-o
   2025年日月食: /2025-eclipse/ || fab fa-moon-o
   2001-2050年日食覆盖范围: /eclipse2001-2050/ || fab fa-moon-o
