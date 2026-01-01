@@ -1533,7 +1533,7 @@ date: 2025-12-24 22:51:00
 
 ## 已编号的流星雨（MDC总表）
 >
->引用IAU Meteor Data Center流星数据中：<https://www.ta3.sk/IAUC22DB/MDC2022/>
+>引用IAU Meteor Data Center流星数据中心：<a target="_blank" rel="noopener" href="https://www.ta3.sk/IAUC22DB/MDC2022/" title="开新视窗-IAU Meteor Data Center流星数据中心">https://www.ta3.sk/IAUC22DB/MDC2022/</a>  
 
 国际天文学联合会（IAU）于2009年8月7日在巴西里约热内卢的大会中，投票一致通过64个流星雨的正式名称，其中包括采用在1922年5月议决废弃的象限仪座，作为一月天龙座流星雨的替代名称。象限仪座流星雨（00010 QUA Quadrantids）被保留下来。国际惯例，流星雨名称均按辐射点所在的星座命名。和其它的流星雨一样，有正统的流星雨所属格ids，而不是省略的“象限仪(座)流星雨”。
 
@@ -2626,7 +2626,7 @@ date: 2025-12-24 22:51:00
 
 ### **流星雨**和**流星群**的命名
 
-&emsp;&emsp;国际天文学联合会2007年定下[流星雨命名规则](https://www.ta3.sk/Iau）  C22DB/MDC2007/Dokumenty/shower_nomenclature.php "开新视窗-流星雨命名规则")，确立一套一致的标准，属下的第22委员会2009年开始审定确定了的流星雨名称。  
+&emsp;&emsp;国际天文学联合会2007年定下<a target="_blank" rel="noopener" href="https://www.ta3.sk/IAUC22DB/MDC2007/Dokumenty/shower_nomenclature.php" title="开新视窗-流星雨命名规则">流星雨命名规则</a>，确立一套一致的标准，属下的第22委员会2009年开始审定确定了的流星雨名称。  
 
 #### 一、流星雨名称要实现两岸统一
 
@@ -2636,7 +2636,7 @@ date: 2025-12-24 22:51:00
 &emsp;&emsp;ids（是identified single shower的字尾）用于单独来源的流星雨。例如：英仙座流星雨（Perseids，00007 PER）、双子座流星雨（Geminids，00004 GEM）、象限仪座流星雨（Quadrantids，00010 QUA）等。  
 
 **流星群命名规则**  
-&emsp;&emsp;id（是identified shower group的字尾）然后再加Complex用于复合来源的流星群。例如：[双鱼座复合流星群（ Piscid Complex，00030 PSC）](https://www.ta3.sk/Iau）  C22DB/MDC2007/Roje/pojedynczy_obiekt.php?kodstrumienia=00030&colecimy=0&kodmin=00001&kodmax=01131&sortowanie=0 "开新视窗-Iau）  流星数据中心")，由215/NPI和216/SPI两个流星雨来源组成。[牧夫-北冕座复合流星群（Bootid-Coronae Borealid Complex，00332 BCB）](https://www.ta3.sk/Iau）  C22DB/MDC2007/Roje/pojedynczy_obiekt.php?kodstrumienia=00332&colecimy=0&kodmin=00001&kodmax=01131&sortowanie=0 "开新视窗-Iau）  流星数据中心")，由321/TCB、322/LBO、323/XCB三个流星雨来源组成。  
+&emsp;&emsp;id（是identified shower group的字尾）然后再加Complex用于复合来源的流星群。例如：<a target="_blank" rel="noopener" href="https://www.ta3.sk/IAUC22DB/MDC2007/Roje/pojedynczy_obiekt.php?kodstrumienia=00030&colecimy=0&kodmin=00001&kodmax=01131&sortowanie=0" title="开新视窗-IAU流星数据中心">双鱼座复合流星群（ Piscid Complex，00030 PSC）</a>，由215&#x2F;NPI和216&#x2F;SPI两个流星雨来源组成。<a target="_blank" rel="noopener" href="https://www.ta3.sk/IAUC22DB/MDC2007/Roje/pojedynczy_obiekt.php?kodstrumienia=00332&colecimy=0&kodmin=00001&kodmax=01131&sortowanie=0" title="开新视窗-IAU流星数据中心">牧夫-北冕座复合流星群（Bootid-Coronae Borealid Complex，00332 BCB）</a>，由321/TCB、322/LBO、323/XCB三个流星雨来源组成。  
 &emsp;&emsp;**流星雨**和**流星群**的组合不同，所以名称不可以互换、不可混淆，对应的星座命名方式也不相同。这一点跟日本不同，从事科普工作者需要清楚正确用法。  
 
 #### **二、以月份命名的流星雨，不能省略月份名。**
