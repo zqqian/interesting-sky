@@ -1511,14 +1511,14 @@ date: 2025-12-24 22:51:00
  46P/Wirtanen 维尔塔宁彗星  
  47P/Ashbrook-Jackson 阿什布鲁克-杰克逊彗星  
  48P/Johnson 詹森彗星  
- 49P/Arend-Rigau）  x 阿朗-里戈彗星  
+ 49P/Arend-Rigaux 阿朗-里戈彗星  
  50P/Arend 阿朗彗星  
  51P/Harrington 哈灵顿彗星  
  52P/Harrington-Abell 哈灵顿-阿贝尔彗星  
  53P/Van Biesbroeck 冯比斯布罗克彗星  
  54P/de Vico-Swift-NEAT 德威科-斯威夫特-尼特彗星  
  55P/Tempel-Tuttle 坦普尔-塔特尔彗星  
- 56P/Slau）  ghter-Burnham 斯洛特尔-伯纳姆彗星  
+ 56P/Slaughter-Burnham 斯洛特尔-伯纳姆彗星  
  57P/duToit-Neujmin-Delporte 杜图瓦-诺伊明-德尔波特彗星  
  58P/Jackson-Neujmin 杰克逊-诺伊明彗星  
  59P/Kearns-Kwee 基恩斯-克威彗星  
@@ -1577,7 +1577,7 @@ date: 2025-12-24 22:51:00
 112P/Urata-Niijima 浦田-新岛彗星  
 113P/Spitaler 史匹塔勒彗星  
 114P/Wiseman-Skiff 怀斯曼-史基福彗星  
-115P/Mau）  ry 莫里彗星  
+115P/Maury 莫里彗星  
 116P/Wild 威尔德4号彗星  
 117P/Helin-Roman-Alu 赫琳-罗曼-阿勒1号彗星  
 118P/Shoemaker-Levy 舒梅克-李维4号彗星  
@@ -1736,7 +1736,7 @@ date: 2025-12-24 22:51:00
 271P/van Houten-Lemmon 万豪敦-莱蒙彗星  
 272P/NEAT 尼特19号彗星  
 273P/Pons-Gambart 庞士-甘巴尔彗星  
-274P/Tombau）  gh-Tenagra  
+274P/Tombaugh-Tenagra  
 275P/Hermann 赫尔曼彗星  
 276P/Vorobjov 沃罗约夫彗星  
 277P/LINEAR 林尼尔51号彗星  
