@@ -64,7 +64,7 @@ footer:
     color: "#ff0000"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
-  copyright: "在这里与天空星星约会、揭开宇宙天文奥秘的最好地点；不论是千载难逢的宇宙奇景，或是稍纵即逝的惊艳世纪秀，皆可躬逢盛会，一览无遗。<br>感谢中国科学院国家天文台中国虚拟天文台之宇宙驿站提供网络空间 <br> Copyright © 2014 - 2025 Interesting Sky. All Rights Reserved."
+  copyright: "在这里与天空星星约会、揭开宇宙天文奥秘的最好地点；不论是千载难逢的宇宙奇景，或是稍纵即逝的惊艳世纪秀，皆可躬逢盛会，一览无遗。<br>感谢中国科学院国家天文台中国虚拟天文台之宇宙驿站提供网络空间 <br> Copyright © 2014 - 2026 Interesting Sky. All Rights Reserved."
 
 
   # Powered by Hexo & NexT
@@ -126,7 +126,7 @@ menu:
 #  2025年11月天象预报: /2025sky-nov/ || fab fa-eye
   2026年重要天象: /2026-calendar-of-astronomical-events/ || fab fa-book
   2026年日月食: /2026-eclipse/ || fab fa-moon-o
-  2025年日月食: /2025-eclipse/ || fab fa-moon-o
+  2026年月相日历: /2026-lunar-chiaroscuro/ || fab fa-moon-o
   2001-2050年日食覆盖范围: /eclipse2001-2050/ || fab fa-moon-o
   IAU流星雨中文名: /list-of-all-meteor-showers/ || fab fa-list
   IAU周期彗星编号: https://www.minorplanetcenter.net/iau/lists/PeriodicCodes.html || fab fa-list
