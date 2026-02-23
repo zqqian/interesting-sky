@@ -2070,7 +2070,7 @@ date: 2025-12-24 22:51:00
 白昼宝瓶座ε流星雨（Daytime epsilon Aquariids，00116 DEQ）  
 白昼宝瓶座c流星雨（Daytime c Aquariids，00117 DCQ）  
 矩尺座γ流星雨（gamma Normids，00118 GNO）  
-半人马座λ流星雨（lambda Centau）  rids，00119 LCE）  
+半人马座λ流星雨（lambda Centaurids，00119 LCE）  
 孔雀座δ流星雨（delta Pavonids，00120 DPA）  
 长蛇座ν流星雨（nu Hydrids，00121 NHY）  
 罗盘座α流星雨（alpha Pyxidids，00122 APX）  
@@ -2101,7 +2101,7 @@ date: 2025-12-24 22:51:00
 五月室女座λ流星雨（May lambda Virginids，00148 MLV）  
 五月蛇夫座北流星雨（Northern May Ophiuchids，00149 NOP）  
 五月蛇夫座南流星雨（Southern May Ophiuchids，00150 SOP）  
-天鹰座ε流星雨（epsilon Aquilids，00151 Eau）  ）确定  
+天鹰座ε流星雨（epsilon Aquilids，00151 Eau）确定  
 白昼鲸鱼座ω北流星雨（Northern Daytime omega Cetids，00152 NOC）确定  
 白昼鲸鱼座ω南流星雨（Southern Daytime omega Cetids，00153 OCE）确定  
 白昼白羊座ε流星雨（Daytime epsilon Arietids，00154 DEA）  
@@ -2133,7 +2133,7 @@ date: 2025-12-24 22:51:00
 巨蛇座μ流星雨（mu Serpentids，00180 MSE）  
 孔雀座κ流星雨（kappa Pavonids，00181 KPA）  
 天鹅座ο流星雨（omicron Cygnids，00182 OCY）  
-南鱼座流星雨（Piscis austrinids，00183 Pau）  ）确定  
+南鱼座流星雨（Piscis austrinids，00183 Pau）确定  
 七月天龙座γ流星雨（July gamma Draconids，00184 GDR）确定  
 白昼仙女座β流星雨（Daytime beta Andromedids，00185 DBA）  
 大熊座ε流星雨（epsilon Ursae Majorids，00186 EUM）  
@@ -2147,7 +2147,7 @@ date: 2025-12-24 22:51:00
 鲸鱼座υ流星雨（upsilon Cetids，00194 UCE）  
 印第安座β流星雨（beta Indids，00195 BIN）  
 凤凰座ν流星雨（nu Phoenicids，00196 NPH）  
-八月天龙座流星雨（august Draconids，00197 au）  D）确定  
+八月天龙座流星雨（august Draconids，00197 auD）确定  
 水蛇座β流星雨（beta Hydrusids，00198 BHY）确定  
 八月摩羯座δ流星雨（august delta Capricornids，00199 ADC）  
 巨蛇座η流星雨（eta Serpentids，00200 ESE）  
@@ -2155,12 +2155,12 @@ date: 2025-12-24 22:51:00
 白昼巨蟹座ζ流星雨（Daytime zeta Cancrids，00202 ZCA）确定  
 白昼狮子座γ流星雨（Daytime gamma Leonids，00203 GLE）  
 白昼狮子座χ流星雨（Daytime chi Leonids，00204 DXL）  
-御夫座ξ流星雨（xi aurigids，00205 Xau）  ）  
-御夫座流星雨（au）  rigids，00206 au）  R）确定  
+御夫座ξ流星雨（xi aurigids，00205 Xau）  
+御夫座流星雨（aurigids，00206 auR）确定  
 九月仙后座β流星雨（September beta Cassiopeiids，00207 SCS）已除名  
 九月英仙座ε流星雨（September epsilon Perseids，00208 SPE）确定  
 波江座ε流星雨（epsilon Eridanids，00209 EER）  
-御夫座β流星雨（beta aurigids，00210 Bau）  ）  
+御夫座β流星雨（beta aurigids，00210 Bau）  
 九月猎户座α流星雨（September alpha Orionids，00211 AOR）  
 白昼狮子座κ流星雨（Daytime kappa Leonids，00212 KLE）确定  
 天鹤座β流星雨（beta Gruids，00213 BRC）  
@@ -2208,7 +2208,7 @@ date: 2025-12-24 22:51:00
 船尾-船帆座第一组复合流星群（Puppid-Velid I Complex，00255 PUV）  
 猎户座χ北流星雨（Northern chi Orionids，00256 ORN）  
 猎户座χ南流星雨（Southern chi Orionids，00257 ORS）确定  
-十二月御夫座α流星雨（December alpha au）  rigids，00258 DAR）  
+十二月御夫座α流星雨（December alpha aurigids，00258 DAR）  
 船底座复合流星群（Carinid Complex，00259 CAR）  
 三角座γ流星雨（gamma Triangulids，00260 GTI）  
 白昼天蝎座δ流星雨（Daytime delta Scorpiids，00261 DDC）  
@@ -2333,7 +2333,7 @@ date: 2025-12-24 22:51:00
 大熊座β流星雨（beta Ursae Majorids，00382 BUM）  
 天龙座λ流星雨（lambda Draconids，00383 LDR）  
 十月天兔座流星雨（October Leporids，00384 OLP）  
-大熊座α流星雨（alpha Ursae Majorids，00385 au）  M）  
+大熊座α流星雨（alpha Ursae Majorids，00385 auM）  
 十月鹿豹座β流星雨（October beta Camelopardalids，00386 OBC）  
 十月天龙座κ流星雨（October kappa Draconids，00387 OKD）  
 金牛座χ流星雨（chi Taurids，00388 CTA）确定  
@@ -2363,7 +2363,7 @@ date: 2025-12-24 22:51:00
 蛇夫座f流星雨（f Ophiuchids，00412 FOP）  
 天琴座μ流星雨（mu Lyrids，00413 MUL）  
 三角座α流星雨（alpha Triangulids，00414 ATR）  
-八月双鱼座流星雨（august Piscids，00415 au）  P）  
+八月双鱼座流星雨（august Piscids，00415 auP）  
 九月仙后座ι流星雨（September iota Cassiopeiids，00416 SIC）  
 金牛座η流星雨（eta Taurids，00417 ETT）  
 武仙座β流星雨（beta Herculids，00418 BHE）  
@@ -2416,7 +2416,7 @@ date: 2025-12-24 22:51:00
 八月鲸鱼座ο流星雨（august omicron Cetids，00466 AOC）  
 八月宝瓶座ν流星雨（august nu Aquariids，00467 ANA）  
 八月武仙座α流星雨（august alpha Herculids，00468 AAH）已除名  
-八月人马座υ流星雨（august upsilon Sagittariids，00469 au）  S）已除名  
+八月人马座υ流星雨（august upsilon Sagittariids，00469 auS）已除名  
 八月天龙座μ流星雨（august mu Draconids，00470 AMD）  
 八月摩羯座β流星雨（august beta Capricornids，00471 ABC）已除名  
 八月天鹰座θ流星雨（august theta Aquilids，00472 ATA）已除名  
@@ -2432,7 +2432,7 @@ date: 2025-12-24 22:51:00
 十一月飞马座γ流星雨（November gamma Pegasids，00482 NGP）已除名  
 十一月六分仪座α流星雨（November alpha Sextantids，00483 NAS）  
 白羊座ι流星雨（iota Arietids，00484 IOA）已除名  
-十一月金牛座ζ流星雨（November zeta Tau）  rids，00485 NZT）已除名  
+十一月金牛座ζ流星雨（November zeta Taurids，00485 NZT）已除名  
 十一月英仙座ζ流星雨（November zeta Perseids，00486 NZP）  
 十一月天鹅座ρ流星雨（November rho Cygnids，00487 NRC）已除名  
 十一月大熊座σ流星雨（November sigma Ursae Majorids，00488 NSU）  
@@ -2520,7 +2520,7 @@ date: 2025-12-24 22:51:00
 武仙座21流星雨（21 Herculids，00572 TOH）  
 小狮座32流星雨（32 Leonis Minorids，00573 TLM）  
 大熊座γ流星雨（gamma Ursae Majorids，00574 GMA）  
-御夫座63流星雨（63 aurigids，00575 Sau）  ）  
+御夫座63流星雨（63 aurigids，00575 Sau）  
 后发座40流星雨（40 Comae Berenicids，00576 FOB）  
 双鱼座58流星雨（58 Piscids，00577 FPI）  
 大熊座θ流星雨（theta Ursae Majorids，00578 TUM）  
@@ -2545,7 +2545,7 @@ date: 2025-12-24 22:51:00
 人马座θ2流星雨（theta2 Sagittariids，00597 TTS）  
 鲸鱼座τ流星雨（tau Cetids，00598 TCT）  
 蛇夫座72流星雨（72 Ophiuchids，00599 POS）  
-御夫座43流星雨（43 aurigids，00600 Fau）  ）  
+御夫座43流星雨（43 aurigids，00600 Fau）  
 巨爵座ι流星雨（iota Craterids，00601 ICT）  
 巨爵座κ流星雨（kappa Craterids，00602 KCR）  
 巨蟹座15流星雨（15 Cancrids，00603 FCR）  
@@ -3023,7 +3023,7 @@ date: 2025-12-24 22:51:00
 罗盘座流星雨（Pyxidids，01163 PYX）  
 矩尺座流星雨（Normids，01164 NOR）  
 半人马座β流星雨（beta Centaurids，01165 BCS）  
-南三角座θ流星雨（theta Trianguli au）  stralids，01166 TTR）  
+南三角座θ流星雨（theta Trianguli australids，01166 TTR）  
 猎户座14流星雨（14 Orionids，01167 FOD）  
 小犬座δ1流星雨（delta1 Canis Minorids，01168 DCN）  
 天炉座ι1流星雨（iota1 Fornacids，01169 IFR）  
