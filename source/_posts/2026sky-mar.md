@@ -143,6 +143,12 @@ date: 2026-02-26 20:40:00
 2026/03/05 21:58:59 惊蛰 初候　7候　戊寅　　345°　　一候 桃始华　　　十三番 桃花  
 2026/03/10 21:57:32 惊蛰 次候　8候　癸未　　350°　　二候 仓庚鸣　　　十四番 棠梨  
 2026/03/15 22:12:33 惊蛰 末候　9候　戊子　　355°　　三候 鹰化为鸩　　十五番 蔷薇  
+<p style="text-align: center">
+    <a href="/images/Shinian-Xiuzhen-Yueli-2026-2035.webp" target="_blank" title="《十年袖珍月历》封面"><img src="/images/Shinian-Xiuzhen-Yueli-2026-2035.webp" alt="《十年袖珍月历》封面"/></a>
+</p>
+<p style="text-align: center">
+    <a href="/images/Shinian-Xiuzhen-Yueli-2026-2035_3.webp" target="_blank" title="《十年袖珍月历》"><img src="/images/Shinian-Xiuzhen-Yueli-2026-2035_3.webp" alt="《十年袖珍月历》"/></a>
+</p>
 
 ### 2026/3/6 沉神星冲日  
 &emsp;&emsp;3月6日35号主带小行星沉神星冲日，整夜可观测。发现日期1855年4月19日。上次过近日点：2021年5月31日，下次过近日点：2026年8月17日。
