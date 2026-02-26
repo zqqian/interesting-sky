@@ -443,4 +443,4 @@ date: 2026-02-26 20:40:00
 </p>
 <p>
     　　2026年天象预报资料，可在“有趣天文奇观”网站下取得，欢迎多加利用！<a href="http://interesting-sky.china-vo.org/categories/year/" target="_self">http://interesting-sky.china-vo.org/categories/year/</a>
-</p>2026sky-mar.md
+</p>
