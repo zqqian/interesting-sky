@@ -5,7 +5,7 @@ tags:
 categories:
   - - recent-astronomical-events
     - 合
-date: 2026-02-26 21:00:00
+date: 2026-02-26 21:31:00
 ---
 
 > 发布单位：台北市立天文科学教育馆
@@ -15,5 +15,5 @@ date: 2026-02-26 21:00:00
 &emsp;&emsp;近期金星处于昏星阶段，于日落后出现在西方天空，亮度约为-3.9等。随着时间推移，在六月中以前，金星在日落后的仰角会逐日升高，亮度也将持续增加。土星则相对较暗，约为1等星，且位置逐渐接近太阳，至三月中旬前黄昏时段的观测时间将愈来愈短。由于两颗行星在天空中的视位置持续改变，3月9日正是它们在近期彼此看起来最为接近的一天。（编辑/台北天文馆段皓元）  
 
 <p style="text-align: center">
-    <a title="2026年3月9日金星合土星示意图。" href="/images/202602161845.webp" target="_blank"><img src="/images/202602161845.webp" alt="2026年3月9日金星合土星示意图。"/></a><br/>2026年3月9日金星合土星示意图。以上示意图由<a title="开新视窗-虚拟天文馆" href="https://stellarium.org/zh_CN/" target="_blank">Stellarium</a>软体产生。
+    <a title="2026年3月9日金星合土星示意图。" href="/images/202603091845.webp" target="_blank"><img src="/images/202603091845.webp" alt="2026年3月9日金星合土星示意图。"/></a><br/>2026年3月9日金星合土星示意图。以上示意图由<a title="开新视窗-虚拟天文馆" href="https://stellarium.org/zh_CN/" target="_blank">Stellarium</a>软体产生。
 </p>
