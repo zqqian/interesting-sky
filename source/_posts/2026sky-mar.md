@@ -133,7 +133,7 @@ date: 2026-02-26 20:40:00
 小行星轨道预报：https://www.astorb.com/info/138.html  
 
 <p style="text-align: center">
-    <a href="/images/202603040210.webp" target="_blank" title="2026年3月4日小行星图卢兹星掩星中国见掩"><img src="/images/202603040210.webp" alt="2026年3月4日小行星图卢兹星掩星中国见掩"/></a>
+    <a href="/images/202603040304.webp" target="_blank" title="2026年3月4日小行星图卢兹星掩星中国见掩"><img src="/images/202603040304.webp" alt="2026年3月4日小行星图卢兹星掩星中国见掩"/></a>
 </p>
 
 ### 2026/3/5 惊蛰  
