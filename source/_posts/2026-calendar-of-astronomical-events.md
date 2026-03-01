@@ -1976,6 +1976,7 @@ date: 2025-12-24 22:51:00
 511P/PanSTARRS 泛星179号彗星  
 512P/PanSTARRS 泛星12号彗星  
 513P/Broughton 布劳顿彗星  
+514P/Lemmon-PanSTARRS  
 
 ## 已编号的流星雨（MDC总表）
 >
