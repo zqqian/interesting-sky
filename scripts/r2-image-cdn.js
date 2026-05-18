@@ -1,5 +1,6 @@
 // 功能：在 Hexo 渲染 HTML 时，自动把站内图片链接改写为 Cloudflare R2 图片域名。
 // 例如：/images/a.webp -> https://img.interesting-sky.com/images/a.webp
+// 例如：/wp-content/uploads/2021/04/a.jpg -> https://img.interesting-sky.com/wp-content/uploads/2021/04/a.jpg
 
 'use strict';
 
@@ -23,9 +24,7 @@ function shouldRewrite(url) {
   // 只处理站内绝对路径
   if (!url.startsWith('/')) return false;
 
-  // 只处理 /images/ 下的图片
-  if (!url.startsWith('/images/')) return false;
-
+  // 凡是站内图片路径都改写
   return IMAGE_EXT_RE.test(url);
 }
 
@@ -35,7 +34,6 @@ function rewriteUrl(url, cdn) {
 }
 
 function rewriteSrcset(value, cdn) {
-  // 处理 srcset="/images/a.webp 1x, /images/b.webp 2x"
   return value
     .split(',')
     .map(item => {
@@ -59,7 +57,6 @@ hexo.extend.filter.register('after_render:html', function (html) {
 
   let changed = 0;
 
-  // 处理 src="", href="", data-src="", data-original="", data-lazy-src=""
   html = html.replace(
     /\b(src|href|data-src|data-original|data-lazy-src)=["']([^"']+)["']/gi,
     function (match, attr, url) {
@@ -69,7 +66,6 @@ hexo.extend.filter.register('after_render:html', function (html) {
     }
   );
 
-  // 处理 srcset=""
   html = html.replace(
     /\bsrcset=["']([^"']+)["']/gi,
     function (match, value) {
