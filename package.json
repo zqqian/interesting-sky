@@ -27,6 +27,6 @@
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^2.1.1"
   }
 }
