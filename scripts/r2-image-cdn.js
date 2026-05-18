@@ -1,41 +1,20 @@
-// 功能：Hexo 生成完成后，自动把 HTML 中 /images/ 开头的图片链接替换为 R2 图片子域名。
+// 功能：在 Hexo 渲染 HTML 时，自动把站内图片链接改写为 Cloudflare R2 图片域名。
+// 例如：/images/a.webp -> https://img.interesting-sky.com/images/a.webp
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+hexo.log.info('[R2 CDN] r2-image-cdn.js loaded');
 
-const IMAGE_CDN = 'https://img.interesting-sky.com';  // 改成你的 R2 自定义域名
-const IMAGE_EXT = /\.(jpg|jpeg|png|gif|bmp|webp|svg|tiff)$/i;
+const IMAGE_EXT_RE = /\.(jpg|jpeg|png|gif|bmp|webp|svg|tiff|avif)([?#].*)?$/i;
 
-// 是否只替换 /images/ 目录下的图片。
-// true：只替换 /images/xxx.webp
-// false：替换所有以图片后缀结尾的站内绝对路径，例如 /2025/a.webp
-const ONLY_IMAGES_DIR = true;
-
-function walk(dir, fileList = []) {
-  if (!fs.existsSync(dir)) return fileList;
-
-  const files = fs.readdirSync(dir);
-
-  for (const file of files) {
-    const fullPath = path.join(dir, file);
-    const stat = fs.statSync(fullPath);
-
-    if (stat.isDirectory()) {
-      walk(fullPath, fileList);
-    } else if (fullPath.endsWith('.html')) {
-      fileList.push(fullPath);
-    }
-  }
-
-  return fileList;
+function normalizeCdn(cdn) {
+  return String(cdn || '').replace(/\/+$/, '');
 }
 
 function shouldRewrite(url) {
   if (!url) return false;
 
-  // 不处理已经是完整 URL 的链接
+  // 不处理完整外链
   if (/^(https?:)?\/\//i.test(url)) return false;
 
   // 不处理 data URI、mailto、tel、锚点
@@ -44,46 +23,65 @@ function shouldRewrite(url) {
   // 只处理站内绝对路径
   if (!url.startsWith('/')) return false;
 
-  // 是否限制在 /images/
-  if (ONLY_IMAGES_DIR && !url.startsWith('/images/')) return false;
+  // 只处理 /images/ 下的图片
+  if (!url.startsWith('/images/')) return false;
 
-  // 去掉 query/hash 后判断扩展名
-  const cleanPath = url.split(/[?#]/)[0];
-
-  return IMAGE_EXT.test(cleanPath);
+  return IMAGE_EXT_RE.test(url);
 }
 
-function rewriteUrl(url) {
+function rewriteUrl(url, cdn) {
   if (!shouldRewrite(url)) return url;
-  return IMAGE_CDN.replace(/\/$/, '') + url;
+  return cdn + url;
 }
 
-function rewriteHtml(html) {
-  // 替换 src="/images/xxx.webp"、href="/images/xxx.webp"、data-src="/images/xxx.webp" 等
-  return html.replace(
+function rewriteSrcset(value, cdn) {
+  // 处理 srcset="/images/a.webp 1x, /images/b.webp 2x"
+  return value
+    .split(',')
+    .map(item => {
+      const trimmed = item.trim();
+      const parts = trimmed.split(/\s+/);
+      if (!parts.length) return item;
+
+      parts[0] = rewriteUrl(parts[0], cdn);
+      return parts.join(' ');
+    })
+    .join(', ');
+}
+
+hexo.extend.filter.register('after_render:html', function (html) {
+  const cdn = normalizeCdn(hexo.config.image_cdn);
+
+  if (!cdn) {
+    hexo.log.warn('[R2 CDN] image_cdn is not set in _config.yml');
+    return html;
+  }
+
+  let changed = 0;
+
+  // 处理 src="", href="", data-src="", data-original="", data-lazy-src=""
+  html = html.replace(
     /\b(src|href|data-src|data-original|data-lazy-src)=["']([^"']+)["']/gi,
     function (match, attr, url) {
-      const newUrl = rewriteUrl(url);
+      const newUrl = rewriteUrl(url, cdn);
+      if (newUrl !== url) changed += 1;
       return `${attr}="${newUrl}"`;
     }
   );
-}
 
-hexo.extend.filter.register('after_generate', function () {
-  const publicDir = hexo.public_dir;
-  const htmlFiles = walk(publicDir);
-
-  let changedCount = 0;
-
-  for (const file of htmlFiles) {
-    const oldHtml = fs.readFileSync(file, 'utf8');
-    const newHtml = rewriteHtml(oldHtml);
-
-    if (newHtml !== oldHtml) {
-      fs.writeFileSync(file, newHtml, 'utf8');
-      changedCount += 1;
+  // 处理 srcset=""
+  html = html.replace(
+    /\bsrcset=["']([^"']+)["']/gi,
+    function (match, value) {
+      const newValue = rewriteSrcset(value, cdn);
+      if (newValue !== value) changed += 1;
+      return `srcset="${newValue}"`;
     }
+  );
+
+  if (changed > 0) {
+    hexo.log.info(`[R2 CDN] rewritten ${changed} image URLs in one HTML file`);
   }
 
-  hexo.log.info(`[R2 CDN] Rewrote image URLs in ${changedCount} HTML files.`);
+  return html;
 });
