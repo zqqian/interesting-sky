@@ -4,7 +4,7 @@ categories:
   - - year
   - - recent-astronomical-events
 author: 杨旸
-date: 2026-05-21 00:28:00
+date: 2026-05-21 00:31:00
 ---
 
 数据来源：中国科学院紫金山天文台  
@@ -438,4 +438,4 @@ ISBN: 9787502984786"><img src="/images/20260611.webp" alt="《十年袖珍月历
 </p>
 <p>
     　　2026年天象预报资料，可在“有趣天文奇观”网站下取得，欢迎多加利用！<a href="https://interesting-sky.com/" target="_blank" title="开新视窗-有趣天文奇观">https://interesting-sky.com/</a>
-</p>2026sky-jun.md
+</p>
