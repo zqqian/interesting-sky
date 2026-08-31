@@ -4,7 +4,7 @@ categories:
   - - year
   - - recent-astronomical-events
 author: 杨旸
-date: 2026-08-31 22:26:00
+date: 2026-08-31 22:30:00
 ---
 
 数据来源：中国科学院紫金山天文台  
