@@ -6,7 +6,8 @@
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
+    <div class="sidebar-inner sidebar-card-stack">
+      <div class="sidebar-main-card">
 
       {%- set display_toc = page.toc.enable and display_toc %}
       {%- if display_toc %}
@@ -34,7 +35,7 @@
       <div class="site-overview-wrap sidebar-panel">
         {{ partial('_partials/sidebar/site-overview.swig', {}, {cache: theme.cache.enable}) }}
 
-        {{- next_inject('sidebar') }}
+
       </div>
 
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
@@ -44,6 +45,9 @@
         </div>
       {%- endif %}
 
+      </div>
+
+      {{- next_inject('sidebar') }}
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>

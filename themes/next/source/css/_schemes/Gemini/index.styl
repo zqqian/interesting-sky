@@ -226,3 +226,30 @@ body {
     background-size: auto; /* 使用图片原始尺寸 */
     background-position: 0 0; /* 从左上角开始平铺 */
 }
+// Keep the overview/TOC and advertisement in separate cards in one affix stack.
+.sidebar-inner.sidebar-card-stack {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+
+  .sidebar-main-card,
+  .sidebar-ad-card {
+    background: var(--content-bg-color);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    box-sizing: border-box;
+    padding: $sidebar-padding 10px;
+  }
+
+  .sidebar-ad-card {
+    margin-top: $sidebar-offset;
+  }
+
+  .sidebar-ad-label {
+    color: var(--text-color);
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    opacity: .6;
+  }
+}

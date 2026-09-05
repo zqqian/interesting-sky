@@ -1,10 +1,87 @@
-<!-- 111 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8152962404708167"
-     data-ad-slot="4491298754"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+<section class="sidebar-ad-card" aria-label="广告">
+  <div class="sidebar-ad-label">广告</div>
+  <div class="sidebar-ads" style="width:220px;max-width:100%;margin:0 auto;">
+  <ins class="adsbygoogle"
+       style="display:block;width:100%;"
+       data-ad-client="ca-pub-8152962404708167"
+       data-ad-slot="4491298754"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  </div>
+</section>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+(function () {
+  var ad = document.querySelector('.sidebar-ads ins.adsbygoogle');
+  if (!ad) return;
+
+  function start() {
+    var timer;
+    var submitted = false;
+    var container = ad.parentElement;
+    var ancestors = [];
+    for (var element = container; element; element = element.parentElement) {
+      ancestors.push(element);
+    }
+
+    function visibleWidth() {
+      if (!ad.isConnected || document.visibilityState === 'hidden') return 0;
+      for (var i = 0; i < ancestors.length; i++) {
+        var style = window.getComputedStyle(ancestors[i]);
+        if (style.display === 'none' || style.visibility !== 'visible' ||
+            parseFloat(style.opacity) < 0.99) return 0;
+      }
+      return ad.getBoundingClientRect().width;
+    }
+
+    function stop() {
+      clearTimeout(timer);
+      mutations.disconnect();
+      if (resize) resize.disconnect();
+      window.removeEventListener('resize', schedule);
+      document.removeEventListener('visibilitychange', schedule);
+    }
+
+    function schedule() {
+      clearTimeout(timer);
+      if (submitted || ad.hasAttribute('data-adsbygoogle-status')) {
+        stop();
+        return;
+      }
+      var width = visibleWidth();
+      if (width <= 0) return;
+      // Wait for NexT's sidebar/panel animation and a stable layout.
+      timer = setTimeout(function () {
+        if (Math.abs(visibleWidth() - width) > 0.5 || visibleWidth() <= 0) {
+          schedule();
+          return;
+        }
+        if (ad.hasAttribute('data-adsbygoogle-status')) {
+          stop();
+          return;
+        }
+        submitted = true;
+        stop();
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (error) {
+          console.error('Sidebar AdSense initialization failed:', error);
+        }
+      }, 200);
+    }
+
+    // Observe only ancestors: AdSense's own DOM updates must not retrigger it.
+    var mutations = new MutationObserver(schedule);
+    ancestors.forEach(function (element) {
+      mutations.observe(element, { attributes: true, attributeFilter: ['class', 'style', 'hidden'] });
+    });
+    var resize = window.ResizeObserver ? new ResizeObserver(schedule) : null;
+    if (resize) resize.observe(container);
+    window.addEventListener('resize', schedule);
+    document.addEventListener('visibilitychange', schedule);
+    schedule();
+  }
+
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start, { once: true });
+})();
 </script>
