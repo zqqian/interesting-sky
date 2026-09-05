@@ -243,6 +243,12 @@ body {
 
   .sidebar-ad-card {
     margin-top: $sidebar-offset;
+
+    // Collapse the entire card only after AdSense confirms no ad was filled.
+    // Keep pending and filled ads visible so sizing and delivery can complete.
+    &:has(ins.adsbygoogle[data-ad-status='unfilled']) {
+      display: none;
+    }
   }
 
   .sidebar-ad-label {
