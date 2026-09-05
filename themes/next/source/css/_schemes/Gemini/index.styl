@@ -226,6 +226,11 @@ body {
     background-size: auto; /* 使用图片原始尺寸 */
     background-position: 0 0; /* 从左上角开始平铺 */
 }
+// Let the page background show through the gaps and pending ad space.
+.sidebar:has(.sidebar-card-stack) {
+  background: transparent;
+}
+
 // Keep the overview/TOC and advertisement in separate cards in one affix stack.
 .sidebar-inner.sidebar-card-stack {
   background: none;
@@ -243,19 +248,21 @@ body {
 
   .sidebar-ad-card {
     margin-top: $sidebar-offset;
+    background: transparent;
+    box-shadow: none;
 
-    // Collapse the entire card only after AdSense confirms no ad was filled.
-    // Keep pending and filled ads visible so sizing and delivery can complete.
+    // Decorate the card only when AdSense reports a filled ad.
+    // Keep its dimensions and visibility unchanged while the request is pending.
+    &:has(ins.adsbygoogle[data-ad-status='filled']) {
+      background: var(--content-bg-color);
+      box-shadow: $box-shadow;
+    }
+
+    // Collapse empty cards after no-fill, script failure, or the loading grace period.
+    &.sidebar-ad-unavailable,
     &:has(ins.adsbygoogle[data-ad-status='unfilled']) {
       display: none;
     }
   }
 
-  .sidebar-ad-label {
-    color: var(--text-color);
-    font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    opacity: .6;
-  }
 }
